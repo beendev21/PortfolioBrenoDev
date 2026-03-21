@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>DevPortifólio</title>
+</head>
+
+<body>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="particulas"></div>
+
+
+
+
+
+    <nav class="navegacao">
+        <div class="nav-inner">
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="Menu">
+                <li>
+                    <a href="#inicio" class="menu-link" data-i18n="nav_inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#sobre" class="menu-link" data-i18n="nav_sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#skills" class="menu-link" data-i18n="nav_skills">Habilidades</a>
+                </li>
+                <li>
+                    <a href="#projetos" class="menu-link" data-i18n="nav_projetos">Projetos</a>
+                </li>
+                <li>
+                    <a href="#contato" class="menu-link" data-i18n="nav_contato">Contato</a>
+                </li>
+                <li>
+                    <a href="#" class="menu-link" id="btn-language" onclick="toggleLanguage(event)">EN</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/breno.jpeg" alt="Foto de Breno Silva" class="foto-perfil">
+        <h1>Breno Da Silva Vale</h1>
+        <p class="cabecalho-sub-titulo" data-i18n="header_role">Backend Developer</p>
+        
+        <div class="info-pessoais">
+            <div class="info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span data-i18n="location">São Paulo, Brasil</span>
+            </div>
+            <div class="info-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span data-i18n="age">21 anos</span>
+            </div>
+        </div>
+
+        <!-- Badge movido para cá (Fluxo do Layout) -->
+        <a href="#contato" class="sidebar-badge">
+            <span class="sidebar-badge-icon">🚀</span>
+            <span class="sidebar-badge-text" data-i18n="badge_text">Breno está procurando estágio</span>
+        </a>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo animate-on-scroll" data-i18n="about_title">Sobre Mim</h2>
+        <div class="sobre-container">
+            <div class="sobre-caixa">
+                <p class="sobre-paragrafo" data-i18n="about_text">Meu nome é Breno da Silva Vale, sou estudante de Sistemas de Informação e Engenharia de Software, com foco no desenvolvimento de soluções tecnológicas inovadoras. Tenho grande interesse por programação, engenharia de dados e análise de dados, utilizando tecnologia e pensamento lógico para transformar desafios complexos em soluções inteligentes e eficientes.
+                    <br><br>
+                    Minha trajetória profissional teve início como Assistente de Vendas, evoluindo posteriormente para a posição de Vendedor Interno. Essa foi a minha primeira escolha após concluir o ensino médio, motivada pela necessidade de contribuir com minha família. Durante esse período, desenvolvi habilidades importantes como comunicação, negociação, proatividade e foco em resultados.
+                    <br><br>
+                    Apesar de ter iniciado minha carreira na área comercial, nunca perdi o interesse pela tecnologia e pelo desejo de atuar na área que realmente me motiva. Ao longo do tempo, mantive meus estudos de forma contínua, buscando aprimorar meus conhecimentos e me preparar para uma transição sólida para a área de tecnologia.
+                    <br><br>
+                    Hoje, sigo dedicado ao meu desenvolvimento acadêmico e profissional, unindo minha experiência prática com a formação em tecnologia para construir soluções cada vez mais eficientes, sempre com foco em aprendizado contínuo, evolução e geração de valor.
+                </p>
+            </div>
+
+            <div class="educacao-card animate-on-scroll delay-200">
+                <h3 class="educacao-titulo" data-i18n="edu_title">Educação</h3>
+                <div class="educacao-item">
+                    <div class="educacao-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg>
+                    </div>
+                    <div class="educacao-info">
+                        <h4 data-i18n="edu_course1_name">Sistemas de Informação</h4>
+                        <p class="instituicao" data-i18n="edu_course1_inst">FIAP</p>
+                        <p data-i18n="edu_course1_desc">Curso focado em tecnologia, negócios e gestão de sistemas, abordando desenvolvimento de software, banco de dados, análise de sistemas e inovação digital.</p>
+                        <span data-i18n="edu_course1_date">Conclusão: 2029</span>
+                    </div>
+                </div>
+                <div class="educacao-item">
+                    <div class="educacao-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg>
+                    </div>
+                    <div class="educacao-info">
+                        <h4 data-i18n="edu_course2_name">Engenharia de Software</h4>
+                        <p class="instituicao" data-i18n="edu_course2_inst">Cruzeiro do Sul Virtual</p>
+                        <p data-i18n="edu_course2_desc">Curso voltado ao desenvolvimento de software com foco em programação, arquitetura de sistemas, engenharia de requisitos, testes e boas práticas de desenvolvimento.</p>
+                        <span data-i18n="edu_course2_date">Conclusão: 2029</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="skills-titulo animate-on-scroll" data-i18n="skills_title">Habilidades</h2>
+            <p class="skills-subtitulo animate-on-scroll" data-i18n="skills_subtitle">Tecnologias que utilizo no dia a dia</p>
+
+            <div class="skills-category">
+                <h3 data-i18n="skills_cat_front" class="animate-on-scroll slide-left">Front-end</h3>
+                <div class="skills-grid">
+                    <div class="skill-card animate-on-scroll delay-100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="40">
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-200">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="40">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-400">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="40">
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 data-i18n="skills_cat_back" class="animate-on-scroll slide-left">Back-end / Análise de Dados</h3>
+                <div class="skills-grid">
+                    <div class="skill-card animate-on-scroll delay-100">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40">
+                        <span>Java</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-200">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-300">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-400">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="40">
+                        <span>Pandas</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-500">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL" width="40">
+                        <span>SQL</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" width="40">
+                        <span>Power BI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Trajetória Profissional -->
+            <div class="trajetoria-card animate-on-scroll">
+                <h3 class="educacao-titulo" data-i18n="traj_title">Trajetória Profissional</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="traj_item1_title">Início na área de tecnologia</h4>
+                            <p data-i18n="traj_item1_desc">Iniciei meus estudos em programação e desenvolvimento de software, aprendendo lógica de programação, HTML, CSS e JavaScript.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="traj_item2_title">Desenvolvimento acadêmico</h4>
+                            <p data-i18n="traj_item2_desc">Atualmente curso Sistemas de Informação e Engenharia de Software, aprofundando conhecimentos em desenvolvimento, banco de dados e engenharia de software.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="traj_item3_title">Projetos práticos</h4>
+                            <p data-i18n="traj_item3_desc">Desenvolvimento de projetos próprios, como portfólio, sistemas e ferramentas, aplicando na prática conceitos de programação e resolução de problemas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 data-i18n="traj_item4_title">Evolução contínua</h4>
+                            <p data-i18n="traj_item4_desc">Buscando estágio e constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Certificados e Cursos -->
+    <section id="certificados" class="certificados">
+        <h2 class="certificados-titulo animate-on-scroll" data-i18n="cert_title">Certificados e Cursos</h2>
+        <div class="certificados-grid">
+            <!-- Imersão Dev -->
+            <div class="certificado-card animate-on-scroll delay-100">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M12 22a10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8v2z"></path><path d="M2 12a10 10 0 0 0 10 10v-2a8 8 0 0 1-8-8H2z"></path><path d="M12 2a10 10 0 0 0-10 10h2a8 8 0 0 1 8-8V2z"></path><path d="m13.82 14.18 2.83 2.83-2.83-2.83-2.83 2.83 2.83-2.83-2.83-2.83 2.83 2.83 2.83-2.83-2.83 2.83z"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_id_plat">Google / Alura</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_id_name">Imersão Dev com Google Gemini</h3>
+                <p class="cert-desc" data-i18n="cert_id_desc">Desenvolvimento de uma aplicação prática utilizando a API do Google Gemini e tecnologias web.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">10ª Edição</span>
+                </div>
+            </div>
+            <!-- Data Science -->
+            <div class="certificado-card animate-on-scroll delay-200">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_ds_plat">FIAP NANO COURSES</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_ds_name">Data Science</h3>
+                <p class="cert-desc" data-i18n="cert_ds_desc">Introdução aos conceitos e ferramentas de Data Science, análise e visualização de dados.</p>
+                <div class="cert-footer">
+                    <span class="cert-data" data-i18n="cert_ds_date">Cursando 2025</span>
+                </div>
+            </div>
+            <!-- Introdução ao Databricks -->
+            <div class="certificado-card animate-on-scroll delay-300">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M12.5 18.5c.38-.22.7-1.02.7-1.5 0-.66-.33-1.28-.7-1.5l-4-2.5c-.38-.22-.82-.22-1.2 0l-4 2.5c-.38.22-.7 1.02-.7 1.5 0 .66.33 1.28.7 1.5l4 2.5c.38.22.82.22 1.2 0l4-2.5zM12.5 11.5c.38-.22.7-1.02.7-1.5 0-.66-.33-1.28-.7-1.5l-4-2.5c-.38-.22-.82-.22-1.2 0l-4 2.5c-.38.22-.7 1.02-.7 1.5 0 .66.33 1.28.7 1.5l4 2.5c.38.22.82.22 1.2 0l4-2.5zM21 11.5c.38-.22.7-1.02.7-1.5 0-.66-.33-1.28-.7-1.5l-4-2.5c-.38-.22-.82-.22-1.2 0l-4 2.5c-.38.22-.7 1.02-.7 1.5 0 .66.33 1.28.7 1.5l4 2.5c.38.22.82.22 1.2 0l4-2.5z"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_db_plat">DATABRICKS</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_db_name">Introdução ao Databricks</h3>
+                <p class="cert-desc" data-i18n="cert_db_desc">Fundamentos da plataforma Databricks para engenharia e análise de dados em larga escala.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Python para Data Science -->
+            <div class="certificado-card animate-on-scroll delay-100">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M14.5 11.5c.38-.22.7-1.02.7-1.5 0-.66-.33-1.28-.7-1.5l-4-2.5c-.38-.22-.82-.22-1.2 0l-4 2.5c-.38.22-.7 1.02-.7 1.5 0 .66.33 1.28.7 1.5l4 2.5c.38.22.82.22 1.2 0l4-2.5zM14.5 18.5c.38-.22.7-1.02.7-1.5 0-.66-.33-1.28-.7-1.5l-4-2.5c-.38-.22-.82-.22-1.2 0l-4 2.5c-.38.22-.7 1.02-.7 1.5 0 .66.33 1.28.7 1.5l4 2.5c.38.22.82.22 1.2 0l4-2.5z"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_pds_plat">ALURA</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_pds_name">Python para Data Science</h3>
+                <p class="cert-desc" data-i18n="cert_pds_desc">Primeiros passos com Python aplicado a Data Science, utilizando bibliotecas como Pandas.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Carreira Análise de Dados -->
+            <div class="certificado-card animate-on-scroll delay-200">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span class="cert-platform" data-i18n="cert_cad_plat">ALURA</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_cad_name">Carreira Análise de Dados</h3>
+                <p class="cert-desc" data-i18n="cert_cad_desc">Boas-vindas ao campo de análise de dados, explorando oportunidades e habilidades necessárias.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Começando em Programação -->
+            <div class="certificado-card animate-on-scroll delay-300">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.09-3.01S5.21 15.64 4.5 16.5z"></path><path d="M22 6c-1.5-1.5-3-2.5-5-2.5-2.76 0-5 2.24-5 5s2.24 5 5 5c.78 0 1.5-.2 2.14-.54"></path><path d="M12 12L7 7"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_cp_plat">ALURA</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_cp_name">Começando em Programação</h3>
+                <p class="cert-desc" data-i18n="cert_cp_desc">Guia sobre carreira, mercado de trabalho e os primeiros passos para se tornar um desenvolvedor.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Lógica de programação -->
+            <div class="certificado-card animate-on-scroll delay-100">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <span class="cert-platform" data-i18n="cert_log_plat">FIAP</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_log_name">Lógica de Programação</h3>
+                <p class="cert-desc" data-i18n="cert_log_desc">Fundamentos essenciais da lógica de programação e construção de algoritmos.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Comunicação -->
+            <div class="certificado-card animate-on-scroll delay-200">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <span class="cert-platform" data-i18n="cert_com_plat">FIAP</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_com_name">Comunicação</h3>
+                <p class="cert-desc" data-i18n="cert_com_desc">Desenvolvimento de habilidades de comunicação eficaz no ambiente profissional e técnico.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+            <!-- Excel Intermediário -->
+            <div class="certificado-card animate-on-scroll delay-300">
+                <div class="cert-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cert-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span class="cert-platform" data-i18n="cert_ex_plat">ALURA</span>
+                </div>
+                <h3 class="cert-nome" data-i18n="cert_ex_name">Excel Intermediário</h3>
+                <p class="cert-desc" data-i18n="cert_ex_desc">Aprofundamento em fórmulas, tabelas dinâmicas e ferramentas de análise de dados no Excel.</p>
+                <div class="cert-footer">
+                    <span class="cert-data">2025</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo animate-on-scroll" data-i18n="projects_title">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card animate-on-scroll delay-100">
+                <img src="img/Port.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projeto" data-i18n="project_portfolio_title">Portfólio</h3>
+                    <p class="paragrafo-projeto" data-i18n="project_portfolio_desc">Meu projeto de portfólio pessoal</p>
+                </div>
+            </div>
+
+            <div class="projetos-card animate-on-scroll delay-200">
+                <img src="img/MundoIa.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projeto" data-i18n="project_ai_title">Mundo IA</h3>
+                    <p class="paragrafo-projeto" data-i18n="project_ai_desc">🎯 Objetivo: Fornecer uma ferramenta simples, educativa e fácil de usar que permita pesquisar e comparar as características de diferentes LLMs e sistemas de IA.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card animate-on-scroll delay-300">
+                <img src="https://elements-resized.envatousercontent.com/elements-video-cover-images/545c68d6-288d-42da-876b-b2ec69b4876c/video_preview/video_preview_0000.jpg?w=500&cf_fit=cover&q=85&format=auto&s=908328ca357a19dc1c6667d665dadda93a8b493b1a5daa1eecf3e54b2775eda4" alt="Projeto 1"
+                    class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projeto" data-i18n="project_oh_title">Em breve...</h3>
+                    <p class="paragrafo-projeto" data-i18n="project_oh_desc">Cozinhando . .</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contato-titulo animate-on-scroll" data-i18n="contact_title">Contato</h2>
+        <form class="formulario-contato animate-on-scroll" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome" data-i18n="contact_name_placeholder" data-i18n-target="placeholder">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem" data-i18n="contact_msg_placeholder" data-i18n-target="placeholder"></textarea>
+            </div>
+
+
+            <button type="submit" class="botao-form" data-i18n="contact_btn">Enviar via WhatsApp</button>
+        </form>
+
+        <div class="social-icons">
+            <a href="https://github.com/beendev21" target="_blank" rel="noopener noreferrer" title="Visite meu GitHub" class="social-icon-link">
+                <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="GitHub" width="50" height="50">
+            </a>
+            <a href="https://www.linkedin.com/in/brenosilvavale/" target="_blank" rel="noopener noreferrer" title="Visite meu LinkedIn" class="social-icon-link">
+                <img src="https://img.icons8.com/ios11/512/FFFFFF/linkedin.png" alt="LinkedIn" width="50" height="50">
+            </a>
+            <a href="https://www.youtube.com/@BeenDev" target="_blank" rel="noopener noreferrer" title="Visite meu YouTube" class="social-icon-link">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube" width="50" height="50">
+            </a>
+            <a href="mailto:brenosilvavalecontato@gmail.com" target="_blank" rel="noopener noreferrer" title="Envie um E-mail" class="social-icon-link">
+                <img src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png" alt="Gmail" width="50" height="50">
+            </a>
+        </div>
+    </section>
+
+    <!-- Job Toast Notification -->
+    <div id="job-toast" class="job-toast">
+        <button class="job-toast-close" onclick="closeJobToast()" aria-label="Fechar">&times;</button>
+        <div class="job-toast-header">
+            <div class="job-toast-icon">🚀</div>
+            <div class="job-toast-content">
+                <span class="job-toast-title" data-i18n="job_toast_title">Open to Work!</span>
+                <p class="job-toast-text" data-i18n="job_toast_text">Breno está procurando estágio!</p>
+            </div>
+        </div>
+        <a href="#contato" class="job-toast-btn" onclick="closeJobToast()" data-i18n="job_toast_btn">Entrar em contato</a>
+    </div>
+
+    <footer class="rodape">
+        <p>Este projeto foi desenvolvido e é de propriedade exclusiva de Breno da Silva Vale — 2026.</p>
+    </footer>
+
+    <script>
+        // Objeto de Traduções
+        const translations = {
+            pt: {
+                // --- EDITE AQUI OS TEXTOS EM PORTUGUÊS ---
+                nav_inicio: "Início",
+                nav_sobre: "Sobre",
+                nav_skills: "Habilidades",
+                nav_projetos: "Projetos",
+                nav_contato: "Contato",
+                header_role: "Backend Developer",
+                location: "São Paulo, Brasil",
+                age: "21 anos",
+                about_title: "Sobre Mim",
+                about_text: "Meu nome é Breno da Silva Vale, sou estudante de Sistemas de Informação e Engenharia de Software, com foco no desenvolvimento de soluções tecnológicas inovadoras. Tenho grande interesse por programação, engenharia de dados e análise de dados, utilizando tecnologia e pensamento lógico para transformar desafios complexos em soluções inteligentes e eficientes.<br><br>Minha trajetória profissional teve início como Assistente de Vendas, evoluindo posteriormente para a posição de Vendedor Interno. Essa foi a minha primeira escolha após concluir o ensino médio, motivada pela necessidade de contribuir com minha família. Durante esse período, desenvolvi habilidades importantes como comunicação, negociação, proatividade e foco em resultados.<br><br>Apesar de ter iniciado minha carreira na área comercial, nunca perdi o interesse pela tecnologia e pelo desejo de atuar na área que realmente me motiva. Ao longo do tempo, mantive meus estudos de forma contínua, buscando aprimorar meus conhecimentos e me preparar para uma transição sólida para a área de tecnologia.<br><br>Hoje, sigo dedicado ao meu desenvolvimento acadêmico e profissional, unindo minha experiência prática com a formação em tecnologia para construir soluções cada vez mais eficientes, sempre com foco em aprendizado contínuo, evolução e geração de valor.",
+                edu_title: "Educação",
+                edu_course1_name: "Bacharelado Sistemas de Informação",
+                edu_course1_inst: "FIAP",
+                edu_course1_desc: "Curso focado em tecnologia, negócios e gestão de sistemas, abordando desenvolvimento de software, banco de dados, análise de sistemas e inovação digital.",
+                edu_course1_date: "Conclusão: 2029",
+                edu_course2_name: "Bacharelado Engenharia de Software",
+                edu_course2_inst: "Cruzeiro do Sul Virtual",
+                edu_course2_desc: "Curso voltado ao desenvolvimento de software com foco em programação, arquitetura de sistemas, engenharia de requisitos, testes e boas práticas de desenvolvimento.",
+                edu_course2_date: "Conclusão: 2029",
+                skills_title: "Habilidades",
+                skills_subtitle: "Tecnologias que utilizo no dia a dia",
+                skills_cat_front: "Front-end",
+                skills_cat_back: "Back-end / Análise de Dados",
+                projects_title: "Meus Projetos",
+                project_portfolio_title: "Portfólio",
+                project_portfolio_desc: "Meu projeto de portfólio pessoal",
+                project_ai_title: "Mundo IA",
+                project_ai_desc: "🎯 Objetivo: Fornecer uma ferramenta simples, educativa e fácil de usar que permita pesquisar e comparar as características de diferentes LLMs e sistemas de IA.",
+                project_oh_title: "Em breve...",
+                project_oh_desc: "Cozinhando . .",
+                contact_title: "Contato",
+                contact_name_placeholder: "Nome",
+                contact_msg_placeholder: "Digite sua mensagem",
+                contact_btn: "Enviar via WhatsApp",
+                // --- TRAJETÓRIA ---
+                traj_title: "Trajetória Profissional",
+                traj_item1_title: "Início na tecnologia",
+                traj_item1_desc: "Iniciei meus estudos em programação e desenvolvimento de software, aprendendo lógica de programação, HTML, CSS e JavaScript.",
+                traj_item2_title: "Desenvolvimento acadêmico",
+                traj_item2_desc: "Atualmente curso Sistemas de Informação e Engenharia de Software, aprofundando conhecimentos em desenvolvimento, banco de dados e engenharia.",
+                traj_item3_title: "Projetos práticos",
+                traj_item3_desc: "Desenvolvimento de projetos próprios, como portfólio, sistemas e ferramentas, aplicando na prática conceitos de programação.",
+                traj_item4_title: "Evolução contínua",
+                traj_item4_desc: "Buscando constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.",
+                // --- CERTIFICADOS ---
+                cert_title: "Certificados e Cursos",
+                cert_btn: "Ver Certificado",
+                cert_id_plat: "Google / Alura",
+                cert_id_name: "Imersão Dev com Google Gemini",
+                cert_id_desc: "Desenvolvimento de uma aplicação prática utilizando a API do Google Gemini e tecnologias web.",
+                cert_ds_plat: "FIAP NANO COURSES",
+                cert_ds_name: "Data Science",
+                cert_ds_desc: "Introdução aos conceitos e ferramentas de Data Science, análise e visualização de dados.",
+                cert_ds_date: "Cursando 2025",
+                cert_db_plat: "DATABRICKS",
+                cert_db_name: "Introdução ao Databricks",
+                cert_db_desc: "Fundamentos da plataforma Databricks para engenharia e análise de dados em larga escala.",
+                cert_pds_plat: "ALURA",
+                cert_pds_name: "Python para Data Science",
+                cert_pds_desc: "Primeiros passos com Python aplicado a Data Science, utilizando bibliotecas como Pandas.",
+                cert_cad_plat: "ALURA",
+                cert_cad_name: "Carreira Análise de Dados",
+                cert_cad_desc: "Boas-vindas ao campo de análise de dados, explorando oportunidades e habilidades necessárias.",
+                cert_cp_plat: "ALURA",
+                cert_cp_name: "Começando em Programação",
+                cert_cp_desc: "Guia sobre carreira, mercado de trabalho e os primeiros passos para se tornar um desenvolvedor.",
+                cert_log_plat: "FIAP",
+                cert_log_name: "Lógica de Programação",
+                cert_log_desc: "Fundamentos essenciais da lógica de programação e construção de algoritmos.",
+                cert_com_plat: "FIAP",
+                cert_com_name: "Comunicação",
+                cert_com_desc: "Desenvolvimento de habilidades de comunicação eficaz no ambiente profissional e técnico.",
+                cert_ex_plat: "ALURA",
+                cert_ex_name: "Excel Intermediário",
+                cert_ex_desc: "Aprofundamento em fórmulas, tabelas dinâmicas e ferramentas de análise de dados no Excel.",
+                // --- JOB TOAST ---
+                job_toast_title: "Open to Work!",
+                job_toast_text: "🚀 Breno está procurando estágio!",
+                job_toast_btn: "Entrar em contato",
+                // --- SIDEBAR BADGE ---
+                badge_text: "Breno está procurando estágio"
+            },
+            en: {
+                nav_inicio: "Home",
+                nav_sobre: "About",
+                nav_skills: "Skills",
+                nav_projetos: "Projects",
+                nav_contato: "Contact",
+                header_role: "Backend Developer",
+                location: "São Paulo, Brazil",
+                age: "21 years old",
+                about_title: "About Me",
+                about_text: "My name is Breno da Silva Vale. I am a student of Information Systems and Software Engineering, focused on developing innovative technological solutions. I have a strong interest in programming, data engineering, and data analysis, using technology and logical thinking to transform complex challenges into smart and efficient solutions.<br><br>My professional journey began as a Sales Assistant, later progressing to the role of Inside Sales Representative. This was my first choice after finishing high school, driven by the need to support my family. During this time, I developed important skills such as communication, negotiation, proactivity, and a results-oriented mindset.<br><br>Although I started my career in the commercial field, I never lost my passion for technology or my desire to work in the area that truly motivates me. Over time, I continuously pursued my studies, improving my knowledge and preparing myself for a solid transition into the tech industry.<br><br>Today, I remain fully committed to my academic and professional growth, combining my practical experience with my education in technology to build increasingly efficient solutions, always driven by continuous learning, growth, and value creation.",
+                // --- EDUCATION SECTION (ENGLISH) ---
+                edu_title: "Education",
+                edu_course1_name: "Bachelor's degree in Information Systems",
+                edu_course1_inst: "FIAP",
+                edu_course1_desc: "Course focused on technology, business and systems management, covering software development, databases, systems analysis, and digital innovation.",
+                edu_course1_date: "Conclusion: 2029",
+                edu_course2_name: "Bachelor's degree in Software Engineering",
+                edu_course2_inst: "Cruzeiro do Sul Virtual",
+                edu_course2_desc: "Course focused on software development with a focus on programming, systems architecture, requirements engineering, testing, and development best practices.",
+                edu_course2_date: "Conclusion: 2029",
+                skills_title: "Skills",
+                skills_subtitle: "Technologies I use daily",
+                skills_cat_front: "Front-end",
+                skills_cat_back: "Back-end / Data Analysis",
+                projects_title: "My Projects",
+                project_portfolio_title: "Portfolio",
+                project_portfolio_desc: "My Personal Portfolio Project",
+                project_ai_title: "AI World",
+                project_ai_desc: "🎯 Objective: Provide a simple, educational, and easy-to-use tool that allows anyone to search and compare features of different LLMs and AI systems.",
+                project_oh_title: "Shortly..",
+                project_oh_desc: "Cooking . . ",
+                contact_title: "Contact",
+                contact_name_placeholder: "Name",
+                contact_msg_placeholder: "Enter your message",
+                contact_btn: "Send via WhatsApp",
+                // --- TRAJECTORY (ENGLISH) ---
+                traj_title: "Professional Trajectory",
+                traj_item1_title: "Start in Technology",
+                traj_item1_desc: "I started my studies in programming and software development, learning programming logic, HTML, CSS, and JavaScript.",
+                traj_item2_title: "Academic Development",
+                traj_item2_desc: "Currently studying Information Systems and Software Engineering, deepening knowledge in development, databases, and software engineering.",
+                traj_item3_title: "Practical Projects",
+                traj_item3_desc: "Development of personal projects, such as portfolios, systems, and tools, practically applying programming concepts.",
+                traj_item4_title: "Continuous Evolution",
+                traj_item4_desc: "Constantly seeking evolution in the technology area, studying new tools, best practices, and market trends.",
+                // --- CERTIFICATES (ENGLISH) ---
+                cert_title: "Certificates & Courses",
+                cert_btn: "View Certificate",
+                cert_id_plat: "Google / Alura",
+                cert_id_name: "Dev Immersion with Google Gemini",
+                cert_id_desc: "Development of a practical application using the Google Gemini API and modern web technologies.",
+                cert_ds_plat: "FIAP NANO COURSES",
+                cert_ds_name: "Data Science",
+                cert_ds_desc: "Introduction to Data Science concepts and tools, data analysis, and visualization.",
+                cert_ds_date: "In progress 2025",
+                cert_db_plat: "DATABRICKS",
+                cert_db_name: "Introduction to Databricks",
+                cert_db_desc: "Fundamentals of the Databricks platform for large-scale data engineering and analysis.",
+                cert_pds_plat: "ALURA",
+                cert_pds_name: "Python for Data Science",
+                cert_pds_desc: "First steps with Python applied to Data Science, using libraries like Pandas.",
+                cert_cad_plat: "ALURA",
+                cert_cad_name: "Data Analysis Career",
+                cert_cad_desc: "Welcome to the field of data analysis, exploring necessary opportunities and skills.",
+                cert_cp_plat: "ALURA",
+                cert_cp_name: "Starting in Programming",
+                cert_cp_desc: "A guide to career, the job market, and the first steps to becoming a developer.",
+                cert_log_plat: "FIAP",
+                cert_log_name: "Programming Logic",
+                cert_log_desc: "Essential fundamentals of programming logic and algorithm construction.",
+                cert_com_plat: "FIAP",
+                cert_com_name: "Communication",
+                cert_com_desc: "Development of effective communication skills in the professional and technical environment.",
+                cert_ex_plat: "ALURA",
+                cert_ex_name: "Intermediate Excel",
+                cert_ex_desc: "In-depth study of formulas, pivot tables, and data analysis tools in Excel.",
+                // --- JOB TOAST ---
+                job_toast_title: "Open to Work!",
+                job_toast_text: "🚀 Breno is looking for an internship!",
+                job_toast_btn: "Get in touch",
+                // --- SIDEBAR BADGE ---
+                badge_text: "Breno is looking for an internship"
+            }
+        };
+
+        // Função para atualizar textos
+        function updateLanguage(lang) {
+            // Atualiza textos visíveis e placeholders
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const target = element.getAttribute('data-i18n-target');
+                const text = translations[lang][key];
+
+                if (target === 'placeholder') {
+                    element.placeholder = text;
+                } else {
+                    element.innerHTML = text;
+                }
+            });
+
+            // Atualiza o botão de troca de idioma
+            const btn = document.getElementById('btn-language');
+            btn.innerText = lang === 'pt' ? 'EN' : 'PT';
+
+            // Salva a preferência
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Função chamada ao clicar no botão
+        function toggleLanguage(event) {
+            event.preventDefault();
+            const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            updateLanguage(newLang);
+        }
+
+        // Inicializa o idioma ao carregar a página
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+            updateLanguage(savedLang);
+
+            // --- Menu Mobile Responsivo ---
+            const nav = document.querySelector('.navegacao');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const menuLinks = document.querySelectorAll('.Menu .menu-link[href^="#"]');
+
+            if (toggleBtn && nav) {
+                toggleBtn.addEventListener('click', () => {
+                    const isOpen = nav.classList.toggle('menu-open');
+                    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                // Fecha o menu ao clicar em um link de âncora
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (nav.classList.contains('menu-open')) {
+                            nav.classList.remove('menu-open');
+                            toggleBtn.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+
+            // --- JOB TOAST LOGIC ---
+            setTimeout(initJobToast, 2000); // Mostra após 2 segundos
+        });
+
+        function initJobToast() {
+            const toast = document.getElementById('job-toast');
+            // Verifica se o usuário já fechou o toast anteriormente
+            if (!localStorage.getItem('jobToastClosed')) {
+                toast.classList.add('show');
+            }
+        }
+
+        function closeJobToast() {
+            const toast = document.getElementById('job-toast');
+            toast.classList.remove('show');
+            toast.classList.add('closing');
+            
+            // Salva a preferência no localStorage
+            localStorage.setItem('jobToastClosed', 'true');
+            
+            // Remove do display após a animação
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 500);
+        }
+
+        function enviarWhats(event) {
+            event.preventDefault()
+
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511985426184';
+
+            const texto = `Olá! Me Chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+
+        }
+
+        // --- ANIMAÇÕES ON SCROLL ---
+        // Configuração do Intersection Observer
+        const observerOptions = {
+            root: null, // observa em relação à viewport
+            rootMargin: '0px',
+            threshold: 0.1 // aciona quando 10% do elemento estiver visível
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Para de observar após animar (anima apenas uma vez)
+                }
+            });
+        }, observerOptions);
+
+        // Seleciona todos os elementos com a classe .animate-on-scroll e inicia a observação
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+    </script>
+
+</body>
+
+</html>
