@@ -390,19 +390,6 @@
         </div>
     </section>
 
-    <!-- Job Toast Notification -->
-    <div id="job-toast" class="job-toast">
-        <button class="job-toast-close" onclick="closeJobToast()" aria-label="Fechar">&times;</button>
-        <div class="job-toast-header">
-            <div class="job-toast-icon">🚀</div>
-            <div class="job-toast-content">
-                <span class="job-toast-title" data-i18n="job_toast_title">Open to Work!</span>
-                <p class="job-toast-text" data-i18n="job_toast_text">Breno está procurando estágio!</p>
-            </div>
-        </div>
-        <a href="#contato" class="job-toast-btn" onclick="closeJobToast()" data-i18n="job_toast_btn">Entrar em contato</a>
-    </div>
-
     <footer class="rodape">
         <p>Este projeto foi desenvolvido e é de propriedade exclusiva de Breno da Silva Vale — 2026.</p>
     </footer>
@@ -487,10 +474,6 @@
                 cert_ex_plat: "ALURA",
                 cert_ex_name: "Excel Intermediário",
                 cert_ex_desc: "Aprofundamento em fórmulas, tabelas dinâmicas e ferramentas de análise de dados no Excel.",
-                // --- JOB TOAST ---
-                job_toast_title: "Open to Work!",
-                job_toast_text: "🚀 Breno está procurando estágio!",
-                job_toast_btn: "Entrar em contato",
                 // --- SIDEBAR BADGE ---
                 badge_text: "Breno está procurando estágio"
             },
@@ -571,10 +554,6 @@
                 cert_ex_plat: "ALURA",
                 cert_ex_name: "Intermediate Excel",
                 cert_ex_desc: "In-depth study of formulas, pivot tables, and data analysis tools in Excel.",
-                // --- JOB TOAST ---
-                job_toast_title: "Open to Work!",
-                job_toast_text: "🚀 Breno is looking for an internship!",
-                job_toast_btn: "Get in touch",
                 // --- SIDEBAR BADGE ---
                 badge_text: "Breno is looking for an internship"
             }
@@ -637,32 +616,7 @@
                     });
                 });
             }
-
-            // --- JOB TOAST LOGIC ---
-            setTimeout(initJobToast, 2000); // Mostra após 2 segundos
         });
-
-        function initJobToast() {
-            const toast = document.getElementById('job-toast');
-            // Verifica se o usuário já fechou o toast anteriormente
-            if (!localStorage.getItem('jobToastClosed')) {
-                toast.classList.add('show');
-            }
-        }
-
-        function closeJobToast() {
-            const toast = document.getElementById('job-toast');
-            toast.classList.remove('show');
-            toast.classList.add('closing');
-            
-            // Salva a preferência no localStorage
-            localStorage.setItem('jobToastClosed', 'true');
-            
-            // Remove do display após a animação
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 500);
-        }
 
         function enviarWhats(event) {
             event.preventDefault()
