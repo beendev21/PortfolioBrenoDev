@@ -1,4 +1,5 @@
 *{
+   /* Reseta as configurações padrão do navegador pra garantir consistência */
    margin: 0;
    padding: 0;
    box-sizing: border-box !important;
@@ -6,10 +7,12 @@
 }
 
 html {
+    /* Rolagem suave ao clicar nos links do menu */
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
 
+/* Definição das cores principais (variáveis) pra facilitar trocas futuras */
 :root {
     --primaria: #dc2626; /* Vermelho */
     --secundaria: #ea580c; /* Laranja */
@@ -19,11 +22,13 @@ html {
     --vidro: rgba(255, 255, 255, 0.05); /* Efeito vidro claro */
 }
 
+/* Fundo geral da página com um degradê sutil */
 body {
     background: linear-gradient(180deg, var(--escuro) 0%, #5a2205 100%);
     color: var(--claro);
 }
 
+/* Menu de navegação fixo no topo */
 .navegacao {
     position: fixed;
     top: 0;
@@ -43,6 +48,7 @@ body {
     justify-content: center;
     gap: 2rem;
 }
+/* Lista de itens do menu */
 .Menu {
     display: flex;
     justify-content: center;
@@ -61,6 +67,7 @@ body {
 
 }
 
+/* Efeito de sublinhado animado nos links do menu */
 .menu-link::after{
     content: '';
     height: 2px;
@@ -78,7 +85,7 @@ body {
 }
 
 
-/* Botão hambúrguer (escondido no desktop) */
+/* Botão hambúrguer (só aparece no mobile) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -93,6 +100,7 @@ body {
     padding: 4px;
 }
 
+/* As três linhas do ícone hambúrguer */
 .menu-toggle span {
     display: block;
     height: 2px;
@@ -115,6 +123,7 @@ body {
     transform: translateY(-6px) rotate(-45deg);
 }
 
+/* Seção principal (Hero) que ocupa boa parte da tela inicial */
 .cabecalho {
     min-height: 70vh;
     display: flex;
@@ -123,6 +132,7 @@ body {
     flex-direction: column;
 }
 
+/* Estilo da foto de perfil com brilho e animação de flutuar */
 .foto-perfil {
     width: 350px;
     height: 350px;
@@ -145,7 +155,7 @@ h1 {
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
     letter-spacing: 1px;
-    opacity: 0;
+    opacity: 0; /* Começa invisível pra animar depois */
     animation: fadeInUp 1.2s ease-out 0.3s forwards;
 }
 
@@ -166,6 +176,7 @@ h1 {
     animation-delay: 0.5s;
 }
 
+/* Chips/Pílulas com info de localização e idade */
 .info-item {
     display: flex;
     align-items: center;
@@ -176,6 +187,7 @@ h1 {
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
     border: 1px solid var(--vidro);
+    /* Efeito de desfoque no fundo (glassmorphism) */
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -190,6 +202,7 @@ h1 {
     color: var(--secundaria);
 }
 
+/* --- Seção Sobre Mim --- */
 .sobre {
     padding: 4rem 1.5rem;
 }
@@ -222,6 +235,7 @@ h1 {
 
 }
 
+/* --- Seção de Skills --- */
 .skills {
     padding: 6rem 2rem;
     position: relative;
@@ -263,6 +277,7 @@ h1 {
     gap: 2rem;
 }
 
+/* Card individual de cada habilidade */
 .skill-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--vidro);
@@ -280,11 +295,13 @@ h1 {
     box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
 }
 
+/* --- Seção de Projetos --- */
 .projetos{
     padding: 6rem 2rem;
 
 }
 
+/* Card de projeto com efeito de vidro */
 .projetos-card{
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
@@ -338,6 +355,7 @@ h1 {
     padding: 1.5rem;
 }
 
+/* --- Seção de Contato --- */
 .contatos {
     padding: 6rem 2rem ;
 
@@ -349,6 +367,7 @@ h1 {
     margin-bottom: 60px;
 }
 
+/* Estilo do formulário flutuante */
 .formulario-contato {
     max-width: 600px;
     margin: 0 auto;
@@ -395,6 +414,7 @@ h1 {
 
 }
 
+/* Botão de envio com gradiente chamativo */
 .botao-form {
     color: #ffffff;
     background-image: linear-gradient(45deg, var(--primaria) 0%, var(--secundaria) 51%, var(--primaria) 100%);
@@ -440,6 +460,7 @@ h1 {
     font-size: 0.9rem;
 }
 
+/* --- Efeitos de Fundo (Partículas e Ondas) --- */
 .ripple-background {
     position: fixed;
     top: 0;
@@ -534,6 +555,7 @@ h1 {
     overflow: hidden;
 }
 
+/* Animação da "gota" caindo nas linhas de fundo */
 .line::after {
     content: '';
     display: block;
@@ -564,6 +586,7 @@ h1 {
     animation-delay: 2.5s;
 }
 
+/* Fundo pontilhado/textura */
 .particulas {
     position: fixed;
     top: 0;
@@ -625,6 +648,7 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
+/* Itens da lista de educação */
 .educacao-item {
     display: flex;
     gap: 1.2rem;
@@ -671,6 +695,7 @@ h1 {
     display: inline-block;
 }
 
+/* --- Keyframes (Definição das Animações) --- */
 @keyframes flutuar {
     0%, 100% {
         transform: translateY(0);
@@ -728,6 +753,7 @@ h1 {
     margin-top: 1rem;
 }
 
+/* Linha vertical da timeline */
 .timeline-item {
     position: relative;
     padding-left: 30px;
@@ -740,6 +766,7 @@ h1 {
     padding-bottom: 0;
 }
 
+/* Bolinha indicadora na timeline */
 .timeline-dot {
     position: absolute;
     left: -6px;
@@ -776,6 +803,7 @@ h1 {
     }
 }
 
+/* Animação de entrada suave (fade in + subida) */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -794,14 +822,16 @@ h1 {
     color: var(--claro);
 }
 
+/* Grid dos Cards de Plataforma (Databricks, Alura, etc) */
 .platforms-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1300px;
     margin: 0 auto;
 }
 
+/* Estilo visual do Card da Plataforma (Dashboard Style) */
 .platform-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -828,6 +858,7 @@ h1 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Fundo do ícone da plataforma */
 .platform-icon-bg {
     width: 48px;
     height: 48px;
@@ -866,6 +897,7 @@ h1 {
     letter-spacing: 1px;
 }
 
+/* Indicadores coloridos (Azul = Curso, Verde = Certificado) */
 .dot-indicator {
     width: 8px;
     height: 8px;
@@ -899,6 +931,7 @@ h1 {
     transform: translateX(5px);
 }
 
+/* Informações do texto dentro do item */
 .item-info {
     flex: 1;
     padding-right: 1rem;
@@ -917,6 +950,8 @@ h1 {
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    /* Standard e Webkit para limitar o texto a 2 linhas */
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -936,12 +971,23 @@ h1 {
 @media (max-width: 768px) {
     .platforms-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     .platform-header {
-        padding: 1.25rem 1.5rem;
+        padding: 1rem 1.25rem;
+    }
+    .platform-name {
+        font-size: 1.25rem;
     }
     .platform-body {
-        padding: 1.5rem;
+        padding: 1.25rem 1rem;
+        gap: 1.5rem;
+    }
+    .platform-item {
+        padding: 0.8rem;
+    }
+    .item-info h5 {
+        font-size: 0.95rem;
     }
 }
 
@@ -949,7 +995,7 @@ h1 {
    RESPONSIVIDADE GERAL
    ========================= */
 
-/* Tablets e telas médias */
+/* Ajustes para Tablets e telas médias */
 @media (max-width: 992px) {
     .navegacao {
         padding: 1rem 1.5rem;
@@ -984,7 +1030,7 @@ h1 {
     }
 }
 
-/* Mobile */
+/* Ajustes para Celulares (Mobile) */
 @media (max-width: 768px) {
     body {
         font-size: 0.95rem;
@@ -1002,6 +1048,7 @@ h1 {
         display: flex;
     }
 
+    /* Menu mobile que desliza de cima pra baixo */
     .Menu {
         position: fixed;
         top: 56px; /* altura aproximada da barra de navegação no mobile */
@@ -1077,6 +1124,7 @@ h1 {
         padding: 1.5rem 1.25rem;
     }
 
+    /* Cards viram coluna única no mobile */
     .skills {
         padding: 4rem 1.25rem;
     }
@@ -1168,7 +1216,7 @@ h1 {
     transform: translateY(0) translateX(0);
 }
 
-/* Variações de Direção */
+/* Variações de Direção para animação */
 .slide-left {
     transform: translateX(-50px);
 }
@@ -1177,7 +1225,7 @@ h1 {
     transform: translateX(50px);
 }
 
-/* Delays para efeito cascata (Staggered animation) */
+/* Atrasos (delays) para criar efeito de "cascata" nos cards */
 .delay-100 {
     transition-delay: 0.1s;
 }

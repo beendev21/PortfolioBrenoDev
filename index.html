@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Elementos de fundo (Linhas caindo e partículas) -->
     <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -23,8 +24,10 @@
 
 
 
+    <!-- Barra de Navegação -->
     <nav class="navegacao">
         <div class="nav-inner">
+            <!-- Botão do menu mobile (hambúrguer) -->
             <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -53,6 +56,7 @@
         </div>
     </nav>
 
+    <!-- Seção Principal (Hero) -->
     <main id="inicio" class="cabecalho">
         <img src="img/breno.jpeg" alt="Foto de Breno Silva" class="foto-perfil">
         <h1>Breno Da Silva Vale</h1>
@@ -69,13 +73,14 @@
             </div>
         </div>
 
-        <!-- Badge movido para cá (Fluxo do Layout) -->
+        <!-- Badge lateral (Balão flutuante chamando para estágio) -->
         <a href="#contato" class="sidebar-badge">
             <span class="sidebar-badge-icon">🚀</span>
             <span class="sidebar-badge-text" data-i18n="badge_text">Disponível para estágio em Backend e Dados</span>
         </a>
     </main>
 
+    <!-- Seção Sobre Mim -->
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo animate-on-scroll" data-i18n="about_title">Sobre Mim</h2>
         <div class="sobre-container">
@@ -90,6 +95,7 @@
                 </p>
             </div>
 
+            <!-- Card de Educação -->
             <div class="educacao-card animate-on-scroll delay-200">
                 <h3 class="educacao-titulo" data-i18n="edu_title">Educação</h3>
                 <div class="educacao-item">
@@ -118,6 +124,7 @@
         </div>
     </section>
 
+    <!-- Seção de Habilidades (Skills) -->
     <section id="skills" class="skills">
         <div class="skills-container">
             <h2 class="skills-titulo animate-on-scroll" data-i18n="skills_title">Habilidades</h2>
@@ -175,7 +182,7 @@
                 </div>
             </div>
 
-            <!-- Card Trajetória Profissional -->
+            <!-- Linha do Tempo da Trajetória -->
             <div class="trajetoria-card animate-on-scroll">
                 <h3 class="educacao-titulo" data-i18n="traj_title">Trajetória Profissional</h3>
                 <div class="timeline">
@@ -254,7 +261,6 @@
             <div class="platform-card animate-on-scroll delay-200">
                 <div class="platform-header">
                     <div class="platform-icon-bg">
-                        <img src="https://play-lh.googleusercontent.com/yDjaHCaOn_O89vnY7eOKH6ElEBtJrmN2CSI4yhiP1_GVC2zrxXWSFGxO0lt9-CU0mV4=w600-h300-pc0xffffff-pd" alt="Alura Logo" width="32" height="32" style="border-radius: 4px; object-fit: contain;">
                         <img src="https://play-lh.googleusercontent.com/yDjaHCaOn_O89vnY7eOKH6ElEBtJrmN2CSI4yhiP1_GVC2zrxXWSFGxO0lt9-CU0mV4" alt="Alura Logo" width="32" height="32" style="border-radius: 4px; object-fit: contain;">
                     </div>
                     <h3 class="platform-name">Alura</h3>
@@ -262,8 +268,35 @@
                 <div class="platform-body">
                     <div class="platform-sub-section">
                         <h4><span class="dot-indicator courses"></span>Cursos</h4>
-                        <div class="platform-list empty-state">
-                            <p class="empty-text">Nenhum curso em andamento</p>
+                        <div class="platform-list">
+                            <div class="platform-item">
+                                <div class="item-info">
+                                    <h5 data-i18n="course_alura_1">Manipulando dados no Python</h5>
+                                    <p data-i18n="course_alura_generic_desc">Curso em andamento.</p>
+                                </div>
+                                <div class="item-status-icon" title="Cursando"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                            <div class="platform-item">
+                                <div class="item-info">
+                                    <h5 data-i18n="course_alura_2">Estruturas condicionais</h5>
+                                    <p data-i18n="course_alura_generic_desc">Curso em andamento.</p>
+                                </div>
+                                <div class="item-status-icon" title="Cursando"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                            <div class="platform-item">
+                                <div class="item-info">
+                                    <h5 data-i18n="course_alura_3">Estruturas de repetição</h5>
+                                    <p data-i18n="course_alura_generic_desc">Curso em andamento.</p>
+                                </div>
+                                <div class="item-status-icon" title="Cursando"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
+                            <div class="platform-item">
+                                <div class="item-info">
+                                    <h5 data-i18n="course_alura_4">Estruturas de dados</h5>
+                                    <p data-i18n="course_alura_generic_desc">Curso em andamento.</p>
+                                </div>
+                                <div class="item-status-icon" title="Cursando"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            </div>
                         </div>
                     </div>
                     <div class="platform-sub-section">
@@ -318,7 +351,7 @@
             <div class="platform-card animate-on-scroll delay-300">
                 <div class="platform-header">
                     <div class="platform-icon-bg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></svg>
+                        <img src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5=w600-h300-pc0xffffff-pd" alt="FIAP Logo" width="32" height="32" style="border-radius: 4px; object-fit: contain;">
                     </div>
                     <h3 class="platform-name">FIAP</h3>
                 </div>
@@ -362,6 +395,7 @@
         </div>
     </section>
 
+    <!-- Seção de Projetos -->
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo animate-on-scroll" data-i18n="projects_title">Meus Projetos</h2>
         <div class="projetos-caixa">
@@ -394,6 +428,7 @@
 
     </section>
 
+    <!-- Seção de Contato -->
     <section id="contato" class="contatos">
         <h2 class="contato-titulo animate-on-scroll" data-i18n="contact_title">Contato</h2>
         <form class="formulario-contato animate-on-scroll" id="formulario" onsubmit="enviarWhats(event)">
@@ -424,12 +459,14 @@
         </div>
     </section>
 
+    <!-- Rodapé -->
     <footer class="rodape">
         <p>Este projeto foi desenvolvido e é de propriedade exclusiva de Breno da Silva Vale — 2026.</p>
     </footer>
 
     <script>
-        // Objeto de Traduções
+        // --- SISTEMA DE TRADUÇÃO (PT/EN) ---
+        // Aqui ficam todos os textos que mudam quando troca o idioma
         const translations = {
             pt: {
                 // --- EDITE AQUI OS TEXTOS EM PORTUGUÊS ---
@@ -508,6 +545,12 @@
                 cert_ex_plat: "ALURA",
                 cert_ex_name: "Excel Intermediário",
                 cert_ex_desc: "Aprofundamento em fórmulas, tabelas dinâmicas e ferramentas de análise de dados no Excel.",
+                // --- CURSOS EM ANDAMENTO ---
+                course_alura_1: "Manipulando dados no Python",
+                course_alura_2: "Estruturas condicionais",
+                course_alura_3: "Estruturas de repetição",
+                course_alura_4: "Estruturas de dados",
+                course_alura_generic_desc: "Curso em andamento na plataforma Alura.",
                 // --- SIDEBAR BADGE ---
                 badge_text: "Disponível para estágio em Backend e Dados"
             },
@@ -588,12 +631,18 @@
                 cert_ex_plat: "ALURA",
                 cert_ex_name: "Intermediate Excel",
                 cert_ex_desc: "In-depth study of formulas, pivot tables, and data analysis tools in Excel.",
+                // --- COURSES IN PROGRESS ---
+                course_alura_1: "Manipulating Data in Python",
+                course_alura_2: "Conditional Structures",
+                course_alura_3: "Loop Structures",
+                course_alura_4: "Data Structures",
+                course_alura_generic_desc: "Course in progress on the Alura platform.",
                 // --- SIDEBAR BADGE ---
                 badge_text: "Breno is looking for an internship"
             }
         };
 
-        // Função para atualizar textos
+        // Função que varre a página procurando elementos com 'data-i18n' e troca o texto
         function updateLanguage(lang) {
             // Atualiza textos visíveis e placeholders
             document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -608,15 +657,15 @@
                 }
             });
 
-            // Atualiza o botão de troca de idioma
+            // Muda o texto do botão (Se tá em PT, botão mostra EN e vice-versa)
             const btn = document.getElementById('btn-language');
             btn.innerText = lang === 'pt' ? 'EN' : 'PT';
 
-            // Salva a preferência
+            // Salva a escolha no navegador pra não perder quando recarregar
             localStorage.setItem('preferredLanguage', lang);
         }
 
-        // Função chamada ao clicar no botão
+        // Função ativada pelo clique no botão de idioma
         function toggleLanguage(event) {
             event.preventDefault();
             const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
@@ -624,12 +673,12 @@
             updateLanguage(newLang);
         }
 
-        // Inicializa o idioma ao carregar a página
+        // Quando a página carrega, verifica o idioma salvo e configura o menu
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
             updateLanguage(savedLang);
 
-            // --- Menu Mobile Responsivo ---
+            // Lógica para abrir/fechar o menu hambúrguer no celular
             const nav = document.querySelector('.navegacao');
             const toggleBtn = document.querySelector('.menu-toggle');
             const menuLinks = document.querySelectorAll('.Menu .menu-link[href^="#"]');
@@ -652,25 +701,52 @@
             }
         });
 
+        // Função para enviar mensagem direto para o WhatsApp
         function enviarWhats(event) {
-            event.preventDefault()
+            event.preventDefault() // Evita que a página recarregue
 
 
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('mensagem').value;
             const telefone = '5511985426184';
 
+            // Cria o link formatado para o WhatsApp API
             const texto = `Olá! Me Chamo ${nome}, ${mensagem}`
             const msgFormatada = encodeURIComponent(texto)
 
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`
 
-            window.open(url, '_blank')
+            window.open(url, '_blank') // Abre em nova aba
 
         }
 
         // --- ANIMAÇÕES ON SCROLL ---
-        // Configuração do Intersection Observer
+        // Faz os elementos aparecerem suavemente quando você rola a página até eles
+        const observerOptions = {
+            root: null, // observa em relação à viewport
+            rootMargin: '0px',
+            threshold: 0.1 // aciona quando 10% do elemento estiver visível
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Anima só uma vez pra não ficar piscando
+                }
+            });
+        }, observerOptions);
+
+        // Seleciona todos os elementos com a classe .animate-on-scroll e inicia a observação
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+    </script>
+
+</body>
+
+</html> // Faz os elementos aparecerem suavemente quando você rola a página até eles
         const observerOptions = {
             root: null, // observa em relação à viewport
             rootMargin: '0px',
@@ -682,6 +758,7 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target); // Para de observar após animar (anima apenas uma vez)
+                    observer.unobserve(entry.target); // Anima só uma vez pra não ficar piscando
                 }
             });
         }, observerOptions);
