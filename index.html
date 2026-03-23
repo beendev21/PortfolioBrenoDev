@@ -746,30 +746,4 @@
 
 </body>
 
-</html> // Faz os elementos aparecerem suavemente quando você rola a página até eles
-        const observerOptions = {
-            root: null, // observa em relação à viewport
-            rootMargin: '0px',
-            threshold: 0.1 // aciona quando 10% do elemento estiver visível
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Para de observar após animar (anima apenas uma vez)
-                    observer.unobserve(entry.target); // Anima só uma vez pra não ficar piscando
-                }
-            });
-        }, observerOptions);
-
-        // Seleciona todos os elementos com a classe .animate-on-scroll e inicia a observação
-        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-            observer.observe(el);
-        });
-
-    </script>
-
-</body>
-
 </html>
