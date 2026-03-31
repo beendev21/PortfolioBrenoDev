@@ -125,7 +125,7 @@ body {
 
 /* Seção principal (Hero) que ocupa boa parte da tela inicial */
 .cabecalho {
-    min-height: 70vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,14 +148,14 @@ body {
 
 h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 4.0rem;
+    font-size: 2.8rem;
     color: #ffffff;
     font-weight: bold;
     margin: 20px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
     letter-spacing: 1px;
-    opacity: 0; /* Começa invisível pra animar depois */
+    opacity: 0;
     animation: fadeInUp 1.2s ease-out 0.3s forwards;
 }
 
@@ -167,10 +167,10 @@ h1 {
 /* Informações Pessoais (Header) */
 .info-pessoais {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 1.5rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; /* Alinhado com o texto */
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0; /* Começa invisível para a animação */
     animation-delay: 0.5s;
@@ -208,7 +208,7 @@ h1 {
 }
 
 .sobre-titulo {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: var(--claro);
     text-align: center;
     margin-bottom: 20px;
@@ -249,7 +249,7 @@ h1 {
 }
 
 .skills-titulo {
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
@@ -320,7 +320,7 @@ h1 {
 
 .projetos-titulo{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 60px;
 }
 
@@ -363,7 +363,7 @@ h1 {
 
 .contato-titulo {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 60px;
 }
 
@@ -641,7 +641,7 @@ h1 {
 }
 
 .educacao-titulo {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--secundaria);
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--vidro);
@@ -817,7 +817,7 @@ h1 {
 
 .certificados-titulo {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 60px;
     color: var(--claro);
 }
@@ -826,7 +826,7 @@ h1 {
 .platforms-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.2rem;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -834,63 +834,67 @@ h1 {
 /* Estilo visual do Card da Plataforma (Dashboard Style) */
 .platform-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
     padding: 0;
     overflow: hidden;
     backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    height: 450px; /* Aumentado para comportar melhor listas longas */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
 }
 
 .platform-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--secundaria);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .platform-header {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.8rem 1.2rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Fundo do ícone da plataforma */
-.platform-icon-bg {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--secundaria);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+.platform-mini-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: contain;
 }
 
 .platform-name {
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--claro);
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .platform-body {
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.2rem;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox: Deixa a barra fina em vez de sumir */
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
+/* Scrollbar minimalista para Chrome/Safari */
+.platform-body::-webkit-scrollbar { width: 3px; }
+.platform-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+
 .platform-sub-section h4 {
-    font-size: 0.9rem;
+    font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -911,24 +915,21 @@ h1 {
 .platform-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.4rem;
 }
 
 .platform-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    background: transparent;
 }
 
 .platform-item:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.04);
 }
 
 /* Informações do texto dentro do item */
@@ -938,19 +939,25 @@ h1 {
 }
 
 .item-info h5 {
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     color: var(--claro);
-    margin-bottom: 0.3rem;
+    margin-bottom: 2px;
     font-weight: 600;
+    /* Permite que o título ocupe até 2 linhas antes de cortar */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    overflow: hidden;
 }
 
 .item-info p {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.4;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    /* Standard e Webkit para limitar o texto a 2 linhas */
     line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
