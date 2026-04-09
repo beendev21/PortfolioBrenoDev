@@ -2,7 +2,7 @@
    /* Reseta as configurações padrão do navegador pra garantir consistência */
    margin: 0;
    padding: 0;
-   box-sizing: border-box !important;
+   box-sizing: border-box;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -14,18 +14,121 @@ html {
 
 /* Definição das cores principais (variáveis) pra facilitar trocas futuras */
 :root {
-    --primaria: #dc2626; /* Vermelho */
-    --secundaria: #ea580c; /* Laranja */
-    --escuro: #2e2e2e; /* Fundo cinza */
-    --maisEscuro: #1a1a1a; /* Cinza mais escuro para detalhes */
-    --claro: #f5f5f5; /* Texto claro */
-    --vidro: rgba(255, 255, 255, 0.05); /* Efeito vidro claro */
+    --primaria: #f97316; /* Laranja Vibrante */
+    --secundaria: #ea580c; /* Laranja Profundo */
+    --escuro: #1e293b; /* Cinza Ardósia Profissional */
+    --maisEscuro: #0f172a; /* Cinza Quase Preto */
+    --cinza-claro: #94a3b8; /* Cinza para textos secundários */
+    --branco: #ffffff; /* Branco Puro */
+    --claro: #f8fafc; /* Branco Gelo */
+    --vidro: rgba(255, 255, 255, 0.05);
+    --borda-vidro: rgba(255, 255, 255, 0.1);
 }
 
 /* Fundo geral da página com um degradê sutil */
 body {
-    background: linear-gradient(180deg, var(--escuro) 0%, #5a2205 100%);
+    background-color: var(--maisEscuro);
     color: var(--claro);
+    overflow-x: hidden;
+}
+
+/* --- Decorações de Fundo Profissionais --- */
+.bg-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* Gradiente de malha para profundidade */
+.mesh-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(30, 41, 59, 0.4) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(15, 23, 42, 1) 0px, transparent 100%);
+}
+
+/* Grade de pontos (Dot Grid) estética */
+.dot-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Desenhos de triângulos flutuantes */
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 86px solid rgba(249, 115, 22, 0.03); /* Laranja quase invisível */
+    filter: blur(2px);
+    animation: float-triangle 20s infinite linear;
+}
+
+.tri-1 {
+    top: 20%;
+    left: 10%;
+    transform: rotate(30deg);
+}
+
+.tri-2 {
+    bottom: 20%;
+    right: 10%;
+    transform: rotate(150deg);
+    border-bottom-color: rgba(255, 255, 255, 0.02);
+    animation-duration: 25s;
+}
+
+@keyframes float-triangle {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, 50px) rotate(120deg); }
+    66% { transform: translate(-20px, 20px) rotate(240deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Elemento Geométrico de Fundo */
+.geometric-divider {
+    position: absolute;
+    top: -50px;
+    top: 0; /* Ajustado para começar no topo da seção 'Sobre' */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--escuro);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+/* Estilização Geral de Cards Modernos */
+.modern-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, transparent 50%, var(--primaria) 50%);
+    opacity: 0.6;
 }
 
 /* Menu de navegação fixo no topo */
@@ -34,14 +137,32 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(18, 18, 18, 0.95);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     width: 100%;
     z-index: 100;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem 2.5rem; /* Padding inferior maior para acomodar a ponta do triângulo */
+    background: transparent;
+    /* O filtro drop-shadow cria o brilho que segue o recorte do ::before */
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+    animation: brilho-triangular 4s infinite alternate ease-in-out;
 }
+
+.navegacao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.8); /* Cinza escuro translúcido */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    border-bottom: 1px solid var(--borda-vidro);
+    z-index: -1;
+}
+
 .nav-inner {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -130,6 +251,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative; /* Necessário para clip-path e z-index */
+    overflow: hidden; /* Garante que o clip-path funcione corretamente */
+    /* Novo: V-shape na parte inferior para um efeito triangular estético */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }
 
 /* Estilo da foto de perfil com brilho e animação de flutuar */
@@ -137,19 +262,19 @@ body {
     width: 350px;
     height: 350px;
     object-fit: cover;
-    box-shadow: 0 0 30px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.2);
     border-radius: 50%;
     padding: 5px;
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria), var(--primaria));
+    background: linear-gradient(45deg, var(--primaria), var(--branco), var(--secundaria));
     background-size: 300% 300%;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--branco);
     animation: flutuar 3s ease-in-out infinite, borda-colorida 4s ease infinite;
 }
 
 h1 {
     font-family: 'Outfit', sans-serif;
     font-size: 2.8rem;
-    color: #ffffff;
+    color: var(--branco);
     font-weight: bold;
     margin: 20px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -181,12 +306,12 @@ h1 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--branco);
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
-    border: 1px solid var(--vidro);
+    border: 1px solid var(--borda-vidro);
     /* Efeito de desfoque no fundo (glassmorphism) */
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -194,7 +319,7 @@ h1 {
 
 .info-item:hover {
     transform: translateY(-3px);
-    border-color: var(--secundaria);
+    border-color: var(--branco);
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -216,12 +341,12 @@ h1 {
 
 .sobre-caixa {
     padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
     border-radius: 16px;
-    border: 1px solid var(--vidro);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
+    backdrop-filter: blur(18px); /* Blur mais intenso */
+    background: rgba(255, 255, 255, 0.05); /* Fundo um pouco mais opaco */
     transition: transform 0.3s ease;
 }
 
@@ -243,7 +368,7 @@ h1 {
 }
 
 .skills-container {
-    max-width: 1100px;
+    max-width: 1440px;
     margin: 0 auto;
     text-align: center;
 }
@@ -266,33 +391,36 @@ h1 {
 
 .skills-category h3 {
     font-size: 1.8rem;
-    color: var(--secundaria);
+    color: var(--branco);
     margin-bottom: 2.5rem;
     text-align: left;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 2rem;
 }
 
 /* Card individual de cada habilidade */
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--vidro);
-    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
+    border-radius: 20px;
     padding: 2rem 1rem;
+    backdrop-filter: blur(15px); /* Adicionado blur */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
 }
 
 .skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--branco);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* --- Seção de Projetos --- */
@@ -303,15 +431,15 @@ h1 {
 
 /* Card de projeto com efeito de vidro */
 .projetos-card{
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
     border-radius: 16px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--vidro);
+    backdrop-filter: blur(15px); /* Blur mais intenso */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
     overflow: hidden;
 }
 
 .projetos-card:hover{
-    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transform: translateY(-10px ) scale(1.03);
     transition: all 0.5s ease;
     cursor: pointer;
@@ -327,9 +455,9 @@ h1 {
 
 .projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 2rem;
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
 
 }
@@ -347,7 +475,7 @@ h1 {
 }
 
 .paragrafo-projeto{
-    color: rgba(245, 245, 245, 0.8);
+    color: var(--cinza-claro);
     line-height: 1.25rem;
 }
 
@@ -371,30 +499,30 @@ h1 {
 .formulario-contato {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(20, 20, 20, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.7); /* Fundo mais opaco */
+    backdrop-filter: blur(20px); /* Blur mais intenso */
+    -webkit-backdrop-filter: blur(20px);
     padding: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(220, 38, 38, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda mais visível */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(249, 115, 22, 0.05);
     border-radius: 20px;
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .formulario-contato:hover {
     transform: translateY(-5px);
-    border-color: rgba(220, 38, 38, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(220, 38, 38, 0.15);
+    border-color: var(--primaria);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(249, 115, 22, 0.15);
 }
 
 
 .campo-form {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(15, 23, 42, 0.6);
     border-radius: 10px;
-    color: var(--claro);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--branco);
+    border: 1px solid var(--borda-vidro);
     outline: none;
     transition: all 0.3s ease;
     font-size: 1rem;
@@ -402,11 +530,10 @@ h1 {
 }
 
 .campo-form:focus {
-    border-color: var(--secundaria);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 20px rgba(234, 88, 12, 0.1);
+    border-color: var(--branco);
+    background: rgba(15, 23, 42, 0.8);
     transform: translateX(5px);
-    border-left: 4px solid var(--secundaria);
+    border-left: 4px solid var(--branco);
 }
 
 .grupo-form {
@@ -593,12 +720,9 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     opacity: 0.5;
-    background: 
-    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
-    var(--maisEscuro);
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 100%);
 }
 
 /* Estilos para o Card de Educação e Layout Responsivo */
@@ -606,13 +730,13 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 @media (min-width: 968px) {
     .sobre-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.2fr 0.8fr;
         align-items: start;
     }
     
@@ -625,11 +749,11 @@ h1 {
 
 .educacao-card,
 .trajetoria-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--vidro);
+    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
     border-radius: 16px;
     padding: 2rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px); /* Blur mais intenso */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -642,7 +766,7 @@ h1 {
 
 .educacao-titulo {
     font-size: 1.4rem;
-    color: var(--secundaria);
+    color: var(--branco);
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--vidro);
     padding-bottom: 0.5rem;
@@ -660,7 +784,7 @@ h1 {
 }
 
 .educacao-icon {
-    color: var(--primaria);
+    color: var(--branco);
     padding-top: 5px;
 }
 
@@ -671,16 +795,14 @@ h1 {
 }
 
 .educacao-info .instituicao {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--cinza-claro);
     font-size: 0.9rem;
     margin-bottom: 0.8rem;
 }
 
 .educacao-info p {
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--cinza-claro);
     margin-bottom: 0.8rem;
 }
 
@@ -690,7 +812,7 @@ h1 {
     background: var(--vidro);
     padding: 4px 10px;
     border-radius: 20px;
-    color: var(--secundaria);
+    color: var(--branco);
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: inline-block;
 }
@@ -706,9 +828,13 @@ h1 {
 }
 
 @keyframes borda-colorida {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+@keyframes brilho-triangular {
+    0% { filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.2)); }
+    100% { filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4)); }
 }
 
 @keyframes typing {
@@ -774,15 +900,15 @@ h1 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--secundaria);
+    background: var(--branco);
     box-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
     transition: all 0.3s ease;
 }
 
 .timeline-item:hover .timeline-dot {
     transform: scale(1.3);
-    background: var(--primaria);
-    box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+    background: var(--branco);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .timeline-content h4 {
@@ -825,21 +951,21 @@ h1 {
 /* Grid dos Cards de Plataforma (Databricks, Alura, etc) */
 .platforms-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.2rem;
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 /* Estilo visual do Card da Plataforma (Dashboard Style) */
 .platform-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%); /* Gradiente mais opaco */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
     border-radius: 16px;
     padding: 0;
     overflow: hidden;
-    backdrop-filter: blur(12px);
-    height: 450px; /* Aumentado para comportar melhor listas longas */
+    backdrop-filter: blur(20px); /* Blur mais intenso */
+    height: 480px; /* Aumentado para comportar melhor listas longas e o novo blur */
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -1044,7 +1170,7 @@ h1 {
     }
 
     .navegacao {
-        padding: 0.6rem 1rem;
+        padding: 1.2rem 1rem 3rem; /* Aumentado para garantir que o botão fique dentro da área plana */
     }
 
     .nav-inner {
@@ -1058,24 +1184,33 @@ h1 {
     /* Menu mobile que desliza de cima pra baixo */
     .Menu {
         position: fixed;
-        top: 56px; /* altura aproximada da barra de navegação no mobile */
+        top: 75px; /* Ajustado para alinhar com a nova altura da barra fixa */
         left: 0;
         right: 0;
-        background: rgba(18, 18, 18, 0.98);
+        background: rgba(18, 18, 18, 0.9);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
         gap: 0;
-        padding: 0.75rem 0;
+        padding: 0.75rem 0 3rem; /* Padding inferior para a ponta do triângulo */
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
         transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
+        /* O triângulo agora aparece na base do menu aberto */
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+
+    /* Remove o triângulo do topo quando o menu está aberto para um encaixe perfeito */
+    .navegacao.menu-open::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .navegacao.menu-open .Menu {
-        max-height: 260px;
+        max-height: 450px; /* Aumentado para acomodar o triângulo e os itens */
         opacity: 1;
         transform: translateY(0);
     }
@@ -1094,7 +1229,7 @@ h1 {
     .cabecalho {
         min-height: auto;
         padding-top: 7.5rem; /* afasta do menu fixo + menu mobile */
-        padding-bottom: 3rem;
+        padding-bottom: 10rem; /* Aumentado para garantir que o triângulo não corte o badge 🚀 */
     }
 
     .foto-perfil {
@@ -1205,6 +1340,16 @@ h1 {
     .platform-card {
         padding: 1.25rem 1rem;
     }
+
+    .sidebar-badge {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        gap: 8px;
+    }
+
+    .sidebar-badge-icon {
+        font-size: 1.1rem;
+    }
 }
 
 /* --- Animações On Scroll (Intersection Observer) --- */
@@ -1269,7 +1414,7 @@ h1 {
     display: inline-flex;
     
     /* Design Moderno: Gradiente Roxo/Azul */
-    background: linear-gradient(135deg, var(--secundaria), var(--primaria)); 
+    background: linear-gradient(135deg, var(--primaria), var(--secundaria)); 
     color: #ffffff;
     
     /* Formato e Espaçamento */
@@ -1280,7 +1425,7 @@ h1 {
     gap: 12px;
     
     /* Efeitos Visuais */
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
     z-index: 10;
     cursor: pointer;
     
@@ -1300,7 +1445,7 @@ h1 {
 
 .sidebar-badge:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.5);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.6);
 }
 
 .sidebar-badge-icon {
@@ -1308,7 +1453,7 @@ h1 {
 }
 
 @keyframes badgePulse {
-    0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
 }

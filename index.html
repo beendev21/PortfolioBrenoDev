@@ -12,6 +12,19 @@
 </head>
 
 <body>
+    <!-- Barra de Progresso -->
+    <div class="scroll-progress" id="scrollBar"></div>
+
+    <!-- Decorações de Fundo Profissionais -->
+    <div class="bg-decorations">
+        <div class="mesh-gradient"></div>
+        <div class="dot-grid"></div>
+        <div class="floating-triangles">
+            <div class="triangle tri-1"></div>
+            <div class="triangle tri-2"></div>
+        </div>
+    </div>
+
     <!-- Elementos de fundo (Linhas caindo e partículas) -->
     <div class="lines">
         <div class="line"></div>
@@ -58,7 +71,9 @@
 
     <!-- Seção Principal (Hero) -->
     <main id="inicio" class="cabecalho">
-        <img src="img/breno.jpeg" alt="Foto de Breno Silva" class="foto-perfil">
+        <div class="foto-wrapper animate-on-scroll">
+            <img src="img/breno.jpeg" alt="Foto de Breno Silva" class="foto-perfil">
+        </div>
         <h1>Breno Da Silva Vale</h1>
         <p class="cabecalho-sub-titulo" data-i18n="header_role">Backend Developer</p>
         
@@ -192,8 +207,8 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h4 data-i18n="traj_item3_title">Projetos práticos</h4>
-                            <p data-i18n="traj_item3_desc">Desenvolvimento de projetos próprios, como portfólio, sistemas e ferramentas, aplicando na prática conceitos de programação e resolução de problemas.</p>
+                            <h4 data-i18n="traj_item3_title">Landing Page Profissional para Oficina Automotiva | Companhia do Conserto</h4>
+                            <p data-i18n="traj_item3_desc">Desenvolvi uma aplicação web para captação de clientes no setor automotivo, aplicando princípios de Engenharia de Software. Foco em performance, escalabilidade, manipulação dinâmica de dados (JavaScript), arquitetura organizada e integração com APIs (Google Maps, WhatsApp), simulando um ambiente de produção.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -526,6 +541,8 @@
         // --- SISTEMA DE TRADUÇÃO (PT/EN) ---
         // Aqui ficam todos os textos que mudam quando troca o idioma
         const translations = {
+            // Adicione aqui o texto de saudação para o Hero
+            hero_hi: "Olá, eu sou",
             pt: {
                 // --- EDITE AQUI OS TEXTOS EM PORTUGUÊS ---
                 nav_inicio: "Início",
@@ -534,6 +551,7 @@
                 nav_projetos: "Projetos",
                 nav_contato: "Contato",
                 header_role: "Backend Developer",
+                contact_btn_hero: "Contate-me",
                 location: "São Paulo, Brasil",
                 age: "21 anos",
                 about_title: "Sobre Mim",
@@ -563,9 +581,9 @@
                 traj_item1_title: "Início na tecnologia",
                 traj_item1_desc: "Iniciei meus estudos em programação e desenvolvimento de software, aprendendo lógica de programação, HTML, CSS e JavaScript.",
                 traj_item2_title: "Desenvolvimento acadêmico",
-                traj_item2_desc: "Atualmente curso Engenharia de Software, aprofundando conhecimentos em desenvolvimento, banco de dados e engenharia.",
-                traj_item3_title: "Projetos práticos",
-                traj_item3_desc: "Desenvolvimento de projetos próprios, como portfólio, sistemas e ferramentas, aplicando na prática conceitos de programação.",
+                traj_item2_desc: "Atualmente curso Engenharia de Software, aprofundando conhecimentos em desenvolvimento, banco de dados e engenharia de software.",
+                traj_item3_title: "Freelance: Landing Page Profissional para Oficina Automotiva | Companhia do Conserto",
+                traj_item3_desc: "Desenvolvi uma aplicação web para captação de clientes no setor automotivo, aplicando princípios de Engenharia de Software. Foco em performance, escalabilidade, manipulação dinâmica de dados (JavaScript), arquitetura organizada e integração com APIs (Google Maps, WhatsApp), simulando um ambiente de produção.",
                 traj_item4_title: "Evolução contínua",
                 traj_item4_desc: "Buscando constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.",
                 // --- CERTIFICADOS ---
@@ -625,12 +643,14 @@
                 course_alura_3: "Estruturas de repetição",
                 course_alura_4: "Estruturas de dados",
                 course_alura_generic_desc: "Curso em andamento na plataforma Alura.",
-                // --- SIDEBAR BADGE ---
-                badge_text: "Disponível para estágio em Backend e Dados"
+                badge_text: "Disponível para estágio em Backend e Dados",
+                badge_text_short: "Disponível para estágio" // Versão mais curta para o Hero
             },
             en: {
+                hero_hi: "Hi, I'm",
                 nav_inicio: "Home",
                 nav_sobre: "About",
+                contact_btn_hero: "Contact Me",
                 nav_skills: "Skills",
                 nav_projetos: "Projects",
                 nav_contato: "Contact",
@@ -666,8 +686,8 @@
                 traj_item1_desc: "I started my studies in programming and software development, learning programming logic, HTML, CSS, and JavaScript.",
                 traj_item2_title: "Academic Development",
                 traj_item2_desc: "Currently studying Software Engineering, deepening knowledge in development, databases, and software engineering.",
-                traj_item3_title: "Practical Projects",
-                traj_item3_desc: "Development of personal projects, such as portfolios, systems, and tools, practically applying programming concepts.",
+                traj_item3_title: "Freelance Web Development: Automotive Project",
+                traj_item3_desc: "Developed a web application for automotive client acquisition, applying Software Engineering principles. Focused on performance, scalability, dynamic data manipulation (JavaScript), organized architecture, and API integration (Google Maps, WhatsApp), simulating a production environment.",
                 traj_item4_title: "Continuous Evolution",
                 traj_item4_desc: "Constantly seeking evolution in the technology area, studying new tools, best practices, and market trends.",
                 // --- CERTIFICATES (ENGLISH) ---
@@ -726,11 +746,27 @@
                 course_alura_2: "Conditional Structures",
                 course_alura_3: "Loop Structures",
                 course_alura_4: "Data Structures",
-                course_alura_generic_desc: "Course in progress on the Alura platform.",
-                // --- SIDEBAR BADGE ---
-                badge_text: "Breno is looking for an internship"
+                course_alura_generic_desc: "Course in progress on the Alura platform.", 
+                badge_text: "Available for Backend & Data internship",
+                badge_text_short: "Available for internship" // Versão mais curta para o Hero
             }
         };
+
+        let typewriterTimeout;
+        function typeWriterEffect(element, text) {
+            let i = 0;
+            element.textContent = '';
+            if (typewriterTimeout) clearTimeout(typewriterTimeout);
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    typewriterTimeout = setTimeout(type, 100);
+                }
+            }
+            type();
+        }
 
         // Função que varre a página procurando elementos com 'data-i18n' e troca o texto
         function updateLanguage(lang) {
@@ -742,6 +778,8 @@
 
                 if (target === 'placeholder') {
                     element.placeholder = text;
+                } else if (key === 'header_role') {
+                    typeWriterEffect(element, text);
                 } else {
                     element.innerHTML = text;
                 }
@@ -827,11 +865,23 @@
             });
         }, observerOptions);
 
+        // Efeito de Parallax Suave no Fundo e Barra de Progresso
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollBar').style.width = scrollPercent + '%';
+
+            // Parallax nos triângulos de fundo
+            const triangles = document.querySelectorAll('.triangle');
+            triangles.forEach((tri, index) => {
+                const speed = (index + 1) * 0.15;
+                tri.style.transform = `translateY(${window.scrollY * speed}px) rotate(${window.scrollY * 0.02}deg)`;
+            });
+        });
+
         // Seleciona todos os elementos com a classe .animate-on-scroll e inicia a observação
         document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             observer.observe(el);
         });
-
     </script>
 
 </body>
