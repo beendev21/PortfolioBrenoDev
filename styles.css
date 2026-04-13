@@ -540,6 +540,8 @@ h1 {
 .icon-css { --pulse-color: #1572b6; animation-delay: 0.5s !important; }
 .icon-js { --pulse-color: #f7df1e; animation-delay: 1s !important; }
 .icon-api { --pulse-color: #00d8ff; animation-delay: 1.5s !important; }
+.icon-maps { --pulse-color: #34a853; animation-delay: 1.5s !important; }
+.icon-whatsapp { --pulse-color: #25d366; animation-delay: 2s !important; }
 
 @keyframes iconPulse {
     0%, 100% { filter: drop-shadow(0 0 0px transparent); }
