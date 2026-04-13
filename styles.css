@@ -459,6 +459,7 @@ h1 {
     gap: 2rem;
     max-width: 1440px;
     margin: 0 auto;
+    align-items: start;
 
 }
 
@@ -476,11 +477,95 @@ h1 {
 
 .paragrafo-projeto{
     color: var(--cinza-claro);
-    line-height: 1.25rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.paragrafo-projeto.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+}
+
+.btn-read-more {
+    display: none; /* Oculto por padrão, o JS decidirá quando mostrar */
+    background: none;
+    border: none;
+    color: var(--primaria);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    padding: 0;
+    transition: color 0.2s;
 }
 
 .caixa-textos-projeto{
     padding: 1.5rem;
+}
+
+.projeto-tech-icons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+    justify-content: space-between; /* Garante que ícones fiquem de um lado e botão do outro */
+}
+
+.tech-icons-wrapper {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.projeto-tech-icons img {
+    width: 20px;
+    height: 20px;
+    filter: none; /* Cores agora ficam visíveis */
+    transition: all 0.3s ease;
+    animation: iconPulse 3s infinite ease-in-out;
+}
+
+.projeto-tech-icons img:hover {
+    transform: scale(1.2);
+    animation-play-state: paused; /* Pausa o pulso ao passar o mouse */
+}
+
+/* Classes específicas para as cores de pulso */
+.icon-html { --pulse-color: #e34f26; animation-delay: 0s !important; }
+.icon-css { --pulse-color: #1572b6; animation-delay: 0.5s !important; }
+.icon-js { --pulse-color: #f7df1e; animation-delay: 1s !important; }
+.icon-api { --pulse-color: #00d8ff; animation-delay: 1.5s !important; }
+
+@keyframes iconPulse {
+    0%, 100% { filter: drop-shadow(0 0 0px transparent); }
+    50% { filter: drop-shadow(0 0 6px var(--pulse-color)); }
+}
+
+.btn-github {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--borda-vidro);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-github:hover {
+    background: var(--primaria);
+    border-color: var(--primaria);
+    transform: translateY(-2px);
 }
 
 /* --- Seção de Contato --- */
