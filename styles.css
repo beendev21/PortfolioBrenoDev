@@ -111,24 +111,29 @@ body {
 
 /* Estilização Geral de Cards Modernos */
 .modern-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Corte tecnológico na quina inferior direita */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
 }
 
 .modern-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, transparent 50%, var(--primaria) 50%);
-    opacity: 0.6;
+    bottom: -15px;
+    right: -15px;
+    width: 50px;
+    height: 50px;
+    background: var(--primaria);
+    transform: rotate(45deg);
+    filter: blur(10px);
+    opacity: 0.4;
+    transition: opacity 0.3s;
 }
 
 /* Menu de navegação fixo no topo */
@@ -343,11 +348,13 @@ h1 {
     padding: 2rem;
     max-width: 100%;
     width: 100%;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
-    backdrop-filter: blur(18px); /* Blur mais intenso */
-    background: rgba(255, 255, 255, 0.05); /* Fundo um pouco mais opaco */
-    transition: transform 0.3s ease;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    /* Estilo triangular/trapezoidal */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
 }
 
 .sobre-caixa:hover {
@@ -404,17 +411,45 @@ h1 {
 
 /* Card individual de cada habilidade */
 .skill-card {
-    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 2rem 1rem;
-    backdrop-filter: blur(15px); /* Adicionado blur */
+    backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     transition: all 0.4s ease;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+.skill-desc {
+    font-size: 0.75rem;
+    color: var(--cinza-claro);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Animação de pulso exclusiva para ícones de Soft Skills */
+.skills-category:last-of-type .skill-card img {
+    animation: softSkillPulse 3s infinite ease-in-out;
+}
+
+/* Desincroniza a animação para um efeito visual mais natural */
+.skills-category:last-of-type .skill-card:nth-child(even) img {
+    animation-delay: 1.5s;
+}
+
+@keyframes softSkillPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px transparent);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px var(--primaria));
+    }
 }
 
 .skill-card:hover {
@@ -431,11 +466,13 @@ h1 {
 
 /* Card de projeto com efeito de vidro */
 .projetos-card{
-    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
-    border-radius: 16px;
-    backdrop-filter: blur(15px); /* Blur mais intenso */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
+    /* Corte diagonal superior e inferior */
+    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
 }
 
 .projetos-card:hover{
@@ -586,14 +623,15 @@ h1 {
 .formulario-contato {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(15, 23, 42, 0.7); /* Fundo mais opaco */
-    backdrop-filter: blur(20px); /* Blur mais intenso */
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda mais visível */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(249, 115, 22, 0.05);
     border-radius: 20px;
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
 }
 
 .formulario-contato:hover {
@@ -836,13 +874,14 @@ h1 {
 
 .educacao-card,
 .trajetoria-card {
-    background: rgba(30, 41, 59, 0.5); /* Fundo mais opaco */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
-    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     padding: 2rem;
-    backdrop-filter: blur(18px); /* Blur mais intenso */
+    backdrop-filter: blur(16px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
 }
 
 .educacao-card:hover,
@@ -1046,16 +1085,17 @@ h1 {
 
 /* Estilo visual do Card da Plataforma (Dashboard Style) */
 .platform-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%); /* Gradiente mais opaco */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
-    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     padding: 0;
     overflow: hidden;
-    backdrop-filter: blur(20px); /* Blur mais intenso */
+    backdrop-filter: blur(16px);
     height: 480px; /* Aumentado para comportar melhor listas longas e o novo blur */
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
 }
 
 .platform-card:hover {
