@@ -1534,10 +1534,49 @@ h1 {
     }
 }
 
+/* --- Botão de Currículo --- */
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 30px;
+    background: rgba(249, 115, 22, 0.05); /* Fundo sutil laranja */
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    border: 2px solid var(--primaria);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards, cvPulse 2.5s infinite 1.5s;
+    z-index: 10;
+}
+
+.btn-cv:hover {
+    background: var(--primaria);
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.btn-cv-icon {
+    color: var(--primaria);
+    transition: color 0.3s ease;
+}
+
+.btn-cv:hover .btn-cv-icon {
+    color: var(--branco);
+}
+
 /* --- Sidebar Badge (Balão Lateral) --- */
 .sidebar-badge {
     position: relative; /* Segue o fluxo da página */
-    margin-top: 2rem;   /* Espaçamento do conteúdo acima */
+    margin-top: 1rem;   /* Espaçamento reduzido para agrupar com o botão CV */
     display: inline-flex;
     
     /* Design Moderno: Gradiente Roxo/Azul */
@@ -1582,5 +1621,12 @@ h1 {
 @keyframes badgePulse {
     0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
     70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+/* Animação de pulso específica para o botão de CV */
+@keyframes cvPulse {
+    0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
     100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
 }
