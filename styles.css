@@ -14,10 +14,10 @@ html {
 
 /* Definição das cores principais (variáveis) pra facilitar trocas futuras */
 :root {
-    --primaria: #06b6d4; /* Cyan/Teal Profissional (Accents) */
-    --secundaria: #1e40af; /* Azul Institucional (Banking Blue) */
-    --escuro: #1e293b; /* Cinza Ardósia */
-    --maisEscuro: #020617; /* Midnight Blue Profundo */
+    --primaria: #e879f9; /* Magenta Suave (Pastel) */
+    --secundaria: #a78bfa; /* Roxo/Lavanda */
+    --escuro: #09090b; /* Preto Profundo */
+    --maisEscuro: #000000; /* Preto Absoluto */
     --cinza-claro: #94a3b8; /* Cinza para textos secundários */
     --branco: #ffffff; /* Branco Puro */
     --claro: #f8fafc; /* Branco Gelo */
@@ -51,9 +51,60 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(30, 41, 59, 0.4) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(15, 23, 42, 1) 0px, transparent 100%);
+        radial-gradient(at 0% 0%, rgba(232, 121, 249, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.2) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(0, 0, 0, 1) 0px, transparent 100%);
+}
+
+/* --- Efeito Nebula Animado --- */
+.nebula-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.25; /* Mantém o efeito sutil como solicitado */
+}
+
+.nebula-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    animation: nebula-movement 25s infinite alternate ease-in-out;
+}
+
+.blob-purple {
+    width: 600px;
+    height: 600px;
+    background: var(--secundaria);
+    top: -10%;
+    left: -10%;
+    animation-duration: 30s;
+}
+
+.blob-pink {
+    width: 500px;
+    height: 500px;
+    background: #fbcfe8; /* Rosa muito suave */
+    bottom: 10%;
+    right: -5%;
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+.blob-magenta {
+    width: 450px;
+    height: 450px;
+    background: var(--primaria);
+    top: 40%;
+    left: 30%;
+    animation-duration: 35s;
+    animation-delay: -10s;
+}
+
+@keyframes nebula-movement {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(100px, 50px) scale(1.1) rotate(45deg); }
+    100% { transform: translate(-50px, 100px) scale(0.9) rotate(-45deg); }
 }
 
 /* Grade de pontos (Dot Grid) estética */
@@ -72,7 +123,7 @@ body {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 86px solid rgba(6, 182, 212, 0.03); /* Cyan quase invisível */
+    border-bottom: 86px solid rgba(232, 121, 249, 0.03); /* Magenta suave quase invisível */
     filter: blur(2px);
     animation: float-triangle 20s infinite linear;
 }
@@ -200,7 +251,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.menu-link:hover, .menu-link.active {
+.menu-link:hover {
     color: var(--branco);
 }
 
@@ -217,7 +268,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.menu-link:hover::after, .menu-link.active::after {
+.menu-link:hover::after {
     transform: translateX(-50%) scale(1);
 }
 
@@ -297,7 +348,7 @@ body {
     width: clamp(200px, 40vw, 350px);
     height: clamp(200px, 40vw, 350px);
     object-fit: cover;
-    box-shadow: 0 0 40px rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 40px rgba(232, 121, 249, 0.2);
     border-radius: 50%;
     padding: 5px;
     background: linear-gradient(45deg, var(--primaria), var(--branco), var(--secundaria));
@@ -491,8 +542,8 @@ h1 {
 .skill-card:hover {
     transform: translateY(-10px) scale(1.05);
     border-color: var(--branco);
-    background: rgba(6, 182, 212, 0.05);
-    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.1);
+    background: rgba(232, 121, 249, 0.05);
+    box-shadow: 0 10px 30px rgba(167, 139, 250, 0.15);
 }
 
 /* --- Seção de Projetos --- */
@@ -720,7 +771,7 @@ h1 {
 .botao-form:hover {
     background-position: right center;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(30, 64, 175, 0.4);
+    box-shadow: 0 10px 20px rgba(167, 139, 250, 0.4);
 }
 
 .social-icons {
@@ -995,8 +1046,8 @@ h1 {
 }
 
 @keyframes brilho-triangular {
-    0% { filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.2)); }
-    100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)); }
+    0% { filter: drop-shadow(0 0 5px rgba(232, 121, 249, 0.2)); }
+    100% { filter: drop-shadow(0 0 15px rgba(232, 121, 249, 0.4)); }
 }
 
 @keyframes typing {
@@ -1063,7 +1114,7 @@ h1 {
     height: 10px;
     border-radius: 50%;
     background: var(--branco);
-    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 10px rgba(232, 121, 249, 0.5);
     transition: all 0.3s ease;
 }
 
@@ -1561,7 +1612,7 @@ h1 {
     align-items: center;
     gap: 12px;
     padding: 12px 30px;
-    background: rgba(6, 182, 212, 0.05); /* Fundo sutil cyan */
+    background: rgba(232, 121, 249, 0.05); /* Fundo sutil magenta */
     font-family: 'Outfit', sans-serif;
     color: var(--branco);
     text-decoration: none;
@@ -1581,7 +1632,7 @@ h1 {
 
 .btn-cv:hover {
     background: var(--primaria);
-    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 25px rgba(232, 121, 249, 0.4);
     transform: translateY(-3px) scale(1.05);
 }
 
@@ -1612,7 +1663,7 @@ h1 {
     gap: 12px;
     
     /* Efeitos Visuais */
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 4px 15px rgba(232, 121, 249, 0.3);
     z-index: 10;
     cursor: pointer;
     
@@ -1625,14 +1676,14 @@ h1 {
     /* Performance e Animação */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Mantém apenas o pulso infinito. A entrada suave é gerida pelo .animate-on-scroll */
+    /* A entrada é gerida pelo .animate-on-scroll. Mantemos apenas o pulso infinito. */
     animation: badgePulse 3s infinite 1.5s;
 }
 
 .sidebar-badge:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.6);
-    animation-play-state: paused; /* Pausa o pulso para o hover funcionar suavemente */
+    box-shadow: 0 10px 25px rgba(232, 121, 249, 0.6);
+    animation-play-state: paused; /* Evita conflito entre o pulso e o destaque do hover */
 }
 
 .sidebar-badge-icon {
@@ -1640,19 +1691,14 @@ h1 {
 }
 
 @keyframes badgePulse {
-    0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
-}
-
-/* Pausa o pulso no hover do botão de CV também */
-.btn-cv:hover {
-    animation-play-state: paused;
+    0% { box-shadow: 0 0 0 0 rgba(232, 121, 249, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(232, 121, 249, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(232, 121, 249, 0); }
 }
 
 /* Animação de pulso específica para o botão de CV */
 @keyframes cvPulse {
-    0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
-    70% { box-shadow: 0 0 0 15px rgba(6, 182, 212, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(167, 139, 250, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(167, 139, 250, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(167, 139, 250, 0); }
 }
