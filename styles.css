@@ -1483,6 +1483,15 @@ h1 {
     }
 
     /* Cards viram coluna única no mobile */
+    .projetos {
+        padding: 4rem 1rem;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
     .skills-category h3 {
         text-align: center;
     }
