@@ -193,13 +193,23 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(2, 6, 23, 0.75);
+    /* Efeito de borda neon que percorre a pílula */
+    background: 
+        linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)) padding-box,
+        linear-gradient(90deg, transparent, var(--primaria), transparent) border-box;
+    background-size: 200% 100%;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--borda-vidro);
+    border: 1.5px solid transparent;
     border-radius: 100px;
     z-index: -1;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(232, 121, 249, 0.1);
+    animation: neon-trail 4s linear infinite;
+}
+
+@keyframes neon-trail {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
 
 .nav-inner {
