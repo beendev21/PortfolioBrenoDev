@@ -3,7 +3,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
 }
 
 html {
@@ -169,7 +169,6 @@ body {
     backdrop-filter: blur(16px);
     border-radius: 16px;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -349,7 +348,7 @@ body {
     overflow: hidden; /* Garante que o clip-path funcione corretamente */
     /* Novo: V-shape na parte inferior para um efeito triangular estético */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-    padding: 140px 1.5rem 100px; /* Padding ajustado */
+    padding: clamp(100px, 15vh, 160px) 1.5rem 100px; 
     text-align: center;
 }
 
@@ -358,7 +357,7 @@ body {
     width: clamp(200px, 40vw, 350px);
     height: clamp(200px, 40vw, 350px);
     object-fit: cover;
-    box-shadow: 0 0 40px rgba(232, 121, 249, 0.2);
+    box-shadow: 0 0 40px rgba(232, 121, 249, 0.3);
     border-radius: 50%;
     padding: 5px;
     background: linear-gradient(45deg, var(--primaria), var(--branco), var(--secundaria));
@@ -444,18 +443,15 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     border-radius: 24px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
 }
 
 .sobre-caixa:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--primaria);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.sobre-caixa:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .sobre-paragrafo {
@@ -573,8 +569,8 @@ h1 {
 }
 
 .projetos-card:hover{
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    transform: translateY(-12px);
     border-color: var(--primaria);
     cursor: pointer;
 }
@@ -727,13 +723,15 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border-radius: 24px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
 }
 
 .formulario-contato:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--primaria);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(232, 121, 249, 0.15);
 }
 
 
@@ -782,6 +780,11 @@ h1 {
     background-position: right center;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(167, 139, 250, 0.4);
+}
+
+.type-cursor {
+    animation: blink-caret 0.75s step-end infinite;
+    color: var(--primaria);
 }
 
 .social-icons {
@@ -970,7 +973,7 @@ h1 {
 
 .educacao-card,
 .trajetoria-card {
-    background: rgba(30, 41, 59, 0.4);
+    background: rgba(15, 23, 42, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 2rem;
@@ -981,8 +984,19 @@ h1 {
 
 .educacao-card:hover,
 .trajetoria-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px);
+    border-color: var(--secundaria);
+}
+
+.badge-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--vidro);
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: var(--branco);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
 }
 
 .educacao-titulo {
