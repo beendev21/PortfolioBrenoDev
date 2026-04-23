@@ -14,15 +14,17 @@ html {
 
 /* Definição das cores principais (variáveis) pra facilitar trocas futuras */
 :root {
-    --primaria: #f97316; /* Laranja Vibrante */
-    --secundaria: #ea580c; /* Laranja Profundo */
-    --escuro: #1e293b; /* Cinza Ardósia Profissional */
-    --maisEscuro: #0f172a; /* Cinza Quase Preto */
+    --primaria: #06b6d4; /* Cyan/Teal Profissional (Accents) */
+    --secundaria: #1e40af; /* Azul Institucional (Banking Blue) */
+    --escuro: #1e293b; /* Cinza Ardósia */
+    --maisEscuro: #020617; /* Midnight Blue Profundo */
     --cinza-claro: #94a3b8; /* Cinza para textos secundários */
     --branco: #ffffff; /* Branco Puro */
     --claro: #f8fafc; /* Branco Gelo */
     --vidro: rgba(255, 255, 255, 0.05);
     --borda-vidro: rgba(255, 255, 255, 0.1);
+    --container-width: 1200px;
+    --section-padding: clamp(4rem, 10vw, 8rem);
 }
 
 /* Fundo geral da página com um degradê sutil */
@@ -49,7 +51,7 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(30, 41, 59, 0.4) 0px, transparent 50%),
         radial-gradient(at 50% 50%, rgba(15, 23, 42, 1) 0px, transparent 100%);
 }
@@ -70,7 +72,7 @@ body {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 86px solid rgba(249, 115, 22, 0.03); /* Laranja quase invisível */
+    border-bottom: 86px solid rgba(6, 182, 212, 0.03); /* Cyan quase invisível */
     filter: blur(2px);
     animation: float-triangle 20s infinite linear;
 }
@@ -114,41 +116,23 @@ body {
     background: rgba(30, 41, 59, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
-    border-radius: 20px;
+    border-radius: 16px;
     position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Corte tecnológico na quina inferior direita */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.modern-card::before {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    right: -15px;
-    width: 50px;
-    height: 50px;
-    background: var(--primaria);
-    transform: rotate(45deg);
-    filter: blur(10px);
-    opacity: 0.4;
-    transition: opacity 0.3s;
-}
-
-/* Menu de navegação fixo no topo */
 .navegacao {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: 95%;
     z-index: 100;
-    padding: 1rem 1.5rem 2.5rem; /* Padding inferior maior para acomodar a ponta do triângulo */
+    padding: 0.6rem 1.5rem;
     background: transparent;
-    /* O filtro drop-shadow cria o brilho que segue o recorte do ::before */
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
-    animation: brilho-triangular 4s infinite alternate ease-in-out;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navegacao::before {
@@ -158,58 +142,102 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(15, 23, 42, 0.8); /* Cinza escuro translúcido */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-    border-bottom: 1px solid var(--borda-vidro);
+    background: rgba(2, 6, 23, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 100px;
     z-index: -1;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-inner {
-    max-width: 1440px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 3rem;
 }
-/* Lista de itens do menu */
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: var(--branco);
+}
+
+.logo-thin {
+    font-weight: 300;
+    opacity: 0.6;
+}
+
+.logo-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primaria);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
 .Menu {
     display: flex;
-    justify-content: center;
     list-style: none;
-    gap: 3rem;
-
-
+    gap: 2rem;
+    align-items: center;
 }
 
 .menu-link {
     text-decoration: none;
-    color: var(--claro);
-    font-weight: 500;
+    color: var(--cinza-claro);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
     position: relative;
-    padding: 0.5rem 0;
-
+    padding: 0.4rem 0;
+    transition: color 0.3s ease;
 }
 
-/* Efeito de sublinhado animado nos links do menu */
-.menu-link::after{
+.menu-link:hover, .menu-link.active {
+    color: var(--branco);
+}
+
+.menu-link::after {
     content: '';
-    height: 2px;
-    width: 0;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria)) ;
-    transition: width 0.5s ease;
-
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 4px;
+    height: 4px;
+    background: var(--primaria);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.menu-link:hover::after {
-    width: 100%;
+.menu-link:hover::after, .menu-link.active::after {
+    transform: translateX(-50%) scale(1);
 }
 
+.lang-toggle {
+    text-decoration: none;
+    color: var(--branco);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border: 1px solid var(--borda-vidro);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: var(--vidro);
+    border-color: var(--primaria);
+    color: var(--primaria);
+}
 
 /* Botão hambúrguer (só aparece no mobile) */
 .menu-toggle {
@@ -251,7 +279,7 @@ body {
 
 /* Seção principal (Hero) que ocupa boa parte da tela inicial */
 .cabecalho {
-    min-height: 85vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -260,14 +288,16 @@ body {
     overflow: hidden; /* Garante que o clip-path funcione corretamente */
     /* Novo: V-shape na parte inferior para um efeito triangular estético */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    padding: 140px 1.5rem 100px; /* Padding ajustado */
+    text-align: center;
 }
 
 /* Estilo da foto de perfil com brilho e animação de flutuar */
 .foto-perfil {
-    width: 350px;
-    height: 350px;
+    width: clamp(200px, 40vw, 350px);
+    height: clamp(200px, 40vw, 350px);
     object-fit: cover;
-    box-shadow: 0 0 40px rgba(249, 115, 22, 0.2);
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.2);
     border-radius: 50%;
     padding: 5px;
     background: linear-gradient(45deg, var(--primaria), var(--branco), var(--secundaria));
@@ -278,7 +308,7 @@ body {
 
 h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     color: var(--branco);
     font-weight: bold;
     margin: 20px;
@@ -290,7 +320,7 @@ h1 {
 }
 
 .cabecalho-sub-titulo {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     color: var(--claro);
 }
 
@@ -300,7 +330,7 @@ h1 {
     gap: 1.5rem;
     margin-top: 1.5rem;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Alinhado com o texto */
+    justify-content: center;
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0; /* Começa invisível para a animação */
     animation-delay: 0.5s;
@@ -334,11 +364,12 @@ h1 {
 
 /* --- Seção Sobre Mim --- */
 .sobre {
-    padding: 4rem 1.5rem;
+    padding: var(--section-padding) 1.5rem;
 }
 
 .sobre-titulo {
-    font-size: 2.2rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: var(--claro);
     text-align: center;
     margin-bottom: 20px;
@@ -351,10 +382,14 @@ h1 {
     background: rgba(30, 41, 59, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
-    border-radius: 20px;
-    transition: all 0.4s ease;
-    /* Estilo triangular/trapezoidal */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sobre-caixa:hover {
+    transform: translateY(-5px);
+    border-color: var(--primaria);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .sobre-caixa:hover {
@@ -369,7 +404,7 @@ h1 {
 
 /* --- Seção de Skills --- */
 .skills {
-    padding: 6rem 2rem;
+    padding: var(--section-padding) 1.5rem;
     position: relative;
     z-index: 1;
 }
@@ -381,7 +416,8 @@ h1 {
 }
 
 .skills-titulo {
-    font-size: 2.2rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
 }
 
@@ -397,7 +433,8 @@ h1 {
 }
 
 .skills-category h3 {
-    font-size: 1.8rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
     color: var(--branco);
     margin-bottom: 2.5rem;
     text-align: left;
@@ -405,7 +442,7 @@ h1 {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 2rem;
 }
 
@@ -413,15 +450,14 @@ h1 {
 .skill-card {
     background: rgba(30, 41, 59, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 2rem 1rem;
     backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    transition: all 0.4s ease;
-    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-desc {
@@ -448,14 +484,15 @@ h1 {
     }
     50% {
         transform: scale(1.1);
-        filter: drop-shadow(0 0 10px var(--primaria));
+        filter: drop-shadow(0 0 10px var(--secundaria));
     }
 }
 
 .skill-card:hover {
     transform: translateY(-10px) scale(1.05);
     border-color: var(--branco);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(6, 182, 212, 0.05);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.1);
 }
 
 /* --- Seção de Projetos --- */
@@ -467,23 +504,22 @@ h1 {
 /* Card de projeto com efeito de vidro */
 .projetos-card{
     background: rgba(30, 41, 59, 0.4);
-    border-radius: 20px;
+    border-radius: 24px;
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    /* Corte diagonal superior e inferior */
-    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projetos-card:hover{
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transform: translateY(-10px ) scale(1.03);
-    transition: all 0.5s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transform: translateY(-10px);
+    border-color: var(--primaria);
     cursor: pointer;
-
 }
 
 .projetos-titulo{
+    font-family: 'Outfit', sans-serif;
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 60px;
@@ -509,7 +545,6 @@ h1 {
 
 .info-projeto{
     margin-bottom: 5px;
-
 }
 
 .paragrafo-projeto{
@@ -614,6 +649,7 @@ h1 {
 }
 
 .contato-titulo {
+    font-family: 'Outfit', sans-serif;
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 60px;
@@ -628,16 +664,15 @@ h1 {
     -webkit-backdrop-filter: blur(20px);
     padding: 3rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(249, 115, 22, 0.05);
-    border-radius: 20px;
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-    clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .formulario-contato:hover {
     transform: translateY(-5px);
     border-color: var(--primaria);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.1);
 }
 
 
@@ -685,7 +720,7 @@ h1 {
 .botao-form:hover {
     background-position: right center;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 10px 20px rgba(30, 64, 175, 0.4);
 }
 
 .social-icons {
@@ -876,12 +911,11 @@ h1 {
 .trajetoria-card {
     background: rgba(30, 41, 59, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 2rem;
     backdrop-filter: blur(16px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .educacao-card:hover,
@@ -891,6 +925,7 @@ h1 {
 }
 
 .educacao-titulo {
+    font-family: 'Outfit', sans-serif;
     font-size: 1.4rem;
     color: var(--branco);
     margin-bottom: 1.5rem;
@@ -915,7 +950,8 @@ h1 {
 }
 
 .educacao-info h4 {
-    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
     color: var(--claro);
     margin-bottom: 0.2rem;
 }
@@ -959,8 +995,8 @@ h1 {
 }
 
 @keyframes brilho-triangular {
-    0% { filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.2)); }
-    100% { filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4)); }
+    0% { filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.2)); }
+    100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4)); }
 }
 
 @keyframes typing {
@@ -1027,7 +1063,7 @@ h1 {
     height: 10px;
     border-radius: 50%;
     background: var(--branco);
-    box-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
     transition: all 0.3s ease;
 }
 
@@ -1063,13 +1099,14 @@ h1 {
 
 /* --- Seção de Certificados --- */
 .certificados {
-    padding: 6rem 2rem;
+    padding: var(--section-padding) 1.5rem;
     position: relative;
 }
 
 .certificados-titulo {
+    font-family: 'Outfit', sans-serif;
     text-align: center;
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-bottom: 60px;
     color: var(--claro);
 }
@@ -1077,7 +1114,7 @@ h1 {
 /* Grid dos Cards de Plataforma (Databricks, Alura, etc) */
 .platforms-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.2rem;
     max-width: 1440px;
     margin: 0 auto;
@@ -1087,15 +1124,15 @@ h1 {
 .platform-card {
     background: rgba(30, 41, 59, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 0;
     overflow: hidden;
     backdrop-filter: blur(16px);
-    height: 480px; /* Aumentado para comportar melhor listas longas e o novo blur */
+    min-height: 400px;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .platform-card:hover {
@@ -1292,138 +1329,94 @@ h1 {
 
 /* Ajustes para Celulares (Mobile) */
 @media (max-width: 768px) {
-    body {
-        font-size: 0.95rem;
-    }
-
     .navegacao {
-        padding: 1.2rem 1rem 3rem; /* Aumentado para garantir que o botão fique dentro da área plana */
+        width: 95%;
+        padding: 0.8rem 1.2rem;
+        top: 15px;
+        border-radius: 20px;
     }
 
     .nav-inner {
         justify-content: space-between;
+        gap: 1rem;
     }
 
     .menu-toggle {
         display: flex;
+        border: none;
     }
 
-    /* Menu mobile que desliza de cima pra baixo */
     .Menu {
         position: fixed;
-        top: 75px; /* Ajustado para alinhar com a nova altura da barra fixa */
-        left: 0;
-        right: 0;
-        background: rgba(18, 18, 18, 0.9);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        top: 80px;
+        left: 10px;
+        right: 10px;
+        background: rgba(2, 6, 23, 0.95);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
-        gap: 0;
-        padding: 0.75rem 0 3rem; /* Padding inferior para a ponta do triângulo */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-radius: 24px;
+        border: 1px solid var(--borda-vidro);
+        margin: 0;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
         transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease;
-        /* O triângulo agora aparece na base do menu aberto */
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-    }
-
-    /* Remove o triângulo do topo quando o menu está aberto para um encaixe perfeito */
-    .navegacao.menu-open::before {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .navegacao.menu-open .Menu {
-        max-height: 450px; /* Aumentado para acomodar o triângulo e os itens */
+        max-height: 500px;
         opacity: 1;
         transform: translateY(0);
     }
 
     .Menu li {
         width: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .menu-link {
+        font-size: 1.3rem; /* Aumentado de 0.9rem */
+        font-weight: 500;
+        padding: 0.8rem 0;
         display: inline-block;
-        padding: 0.65rem 0;
         width: 100%;
+        text-align: center;
+    }
+
+    .lang-toggle {
+        font-size: 1.1rem; /* Aumentado de 0.75rem */
+        padding: 10px 30px;
+        margin-top: 0.5rem;
+        display: inline-block;
     }
 
     .cabecalho {
-        min-height: auto;
-        padding-top: 7.5rem; /* afasta do menu fixo + menu mobile */
-        padding-bottom: 10rem; /* Aumentado para garantir que o triângulo não corte o badge 🚀 */
-    }
-
-    .foto-perfil {
-        width: 180px;
-        height: 180px;
-    }
-
-    h1 {
-        font-size: 2.1rem;
-        margin: 15px 10px;
-        text-align: center;
-    }
-
-    .cabecalho-sub-titulo {
-        font-size: 1.1rem;
-        text-align: center;
-        padding: 0 0.5rem;
+        clip-path: none;
+        background: linear-gradient(180deg, var(--maisEscuro) 0%, rgba(30, 64, 175, 0.05) 100%);
+        padding-bottom: 60px;
     }
 
     .info-pessoais {
         flex-direction: column;
         align-items: center;
-    }
-
-    .sobre-titulo,
-    .skills-titulo,
-    .projetos-titulo,
-    .contato-titulo,
-    .certificados-titulo {
-        font-size: 2rem;
-    }
-
-    .sobre-caixa {
-        padding: 1.5rem 1.25rem;
+        gap: 0.8rem;
     }
 
     /* Cards viram coluna única no mobile */
-    .skills {
-        padding: 4rem 1.25rem;
-    }
-
     .skills-category h3 {
         text-align: center;
     }
 
-    .projetos {
-        padding: 4rem 1.25rem;
-    }
-
-    .projetos-caixa {
-        grid-template-columns: 1fr;
-    }
-
-    .contatos {
-        padding: 4rem 1.25rem;
-    }
-
-    .formulario-contato {
-        padding: 1.5rem 1.25rem;
-    }
-
-    .certificados {
-        padding: 4rem 1.25rem;
-    }
-
     .educacao-item {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
     }
 
     .timeline {
@@ -1436,10 +1429,15 @@ h1 {
 
     /* Ajuste do Badge para Mobile */
     .sidebar-badge {
-        margin-top: 1.5rem;
-        padding: 10px 20px;
+        margin: 1.5rem auto 0;
+        padding: 12px 20px;
         font-size: 0.9rem;
-        width: fit-content; /* Garante que fique centralizado */
+        width: fit-content;
+        display: flex;
+    }
+
+    .btn-cv {
+        margin: 2rem auto 0;
     }
 }
 
@@ -1484,8 +1482,9 @@ h1 {
 /* Estado inicial (invisível) */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(30px); /* Padrão: Slide Up */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(20px); /* Deslocamento mais curto para maior fluidez */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform; /* Otimização de performance */
 }
 
@@ -1495,13 +1494,27 @@ h1 {
     transform: translateY(0) translateX(0);
 }
 
+/* Animação Específica para Cards de Projetos: Perspective Zoom */
+.animate-project-card {
+    transform: translateY(40px) scale(0.95) perspective(1000px) rotateX(-5deg);
+    filter: blur(10px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                filter 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-project-card.is-visible {
+    transform: translateY(0) scale(1) perspective(1000px) rotateX(0deg);
+    filter: blur(0);
+}
+
 /* Variações de Direção para animação */
 .slide-left {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
 }
 
 .slide-right {
-    transform: translateX(50px);
+    transform: translateX(30px);
 }
 
 /* Atrasos (delays) para criar efeito de "cascata" nos cards */
@@ -1525,6 +1538,14 @@ h1 {
     transition-delay: 0.5s;
 }
 
+/* Ajustes Responsivos para Animações */
+@media (max-width: 768px) {
+    .animate-on-scroll {
+        transform: translateY(15px); /* No mobile, movimentos menores são mais elegantes */
+        transition-duration: 0.6s;   /* Resposta mais rápida no toque */
+    }
+}
+
 /* Remove animação se o usuário preferir movimento reduzido (Acessibilidade) */
 @media (prefers-reduced-motion: reduce) {
     .animate-on-scroll {
@@ -1540,7 +1561,8 @@ h1 {
     align-items: center;
     gap: 12px;
     padding: 12px 30px;
-    background: rgba(249, 115, 22, 0.05); /* Fundo sutil laranja */
+    background: rgba(6, 182, 212, 0.05); /* Fundo sutil cyan */
+    font-family: 'Outfit', sans-serif;
     color: var(--branco);
     text-decoration: none;
     border-radius: 50px;
@@ -1549,7 +1571,6 @@ h1 {
     border: 2px solid var(--primaria);
     backdrop-filter: blur(10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Outfit', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
@@ -1560,7 +1581,7 @@ h1 {
 
 .btn-cv:hover {
     background: var(--primaria);
-    box-shadow: 0 0 25px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
     transform: translateY(-3px) scale(1.05);
 }
 
@@ -1591,7 +1612,7 @@ h1 {
     gap: 12px;
     
     /* Efeitos Visuais */
-    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
     z-index: 10;
     cursor: pointer;
     
@@ -1604,14 +1625,14 @@ h1 {
     /* Performance e Animação */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Entrada suave (mesma animação do header) */
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.8s forwards, badgePulse 3s infinite 1s;
+    /* Mantém apenas o pulso infinito. A entrada suave é gerida pelo .animate-on-scroll */
+    animation: badgePulse 3s infinite 1.5s;
 }
 
 .sidebar-badge:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.6);
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.6);
+    animation-play-state: paused; /* Pausa o pulso para o hover funcionar suavemente */
 }
 
 .sidebar-badge-icon {
@@ -1619,14 +1640,19 @@ h1 {
 }
 
 @keyframes badgePulse {
-    0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+}
+
+/* Pausa o pulso no hover do botão de CV também */
+.btn-cv:hover {
+    animation-play-state: paused;
 }
 
 /* Animação de pulso específica para o botão de CV */
 @keyframes cvPulse {
-    0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.6); }
-    70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(6, 182, 212, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
     <title>DevPortifólio</title>
 </head>
 
@@ -40,6 +40,10 @@
     <!-- Barra de Navegação -->
     <nav class="navegacao">
         <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="logo-dot"></span>
+                <span class="logo-text">B.VALE <span class="logo-thin">DEVELOPER</span></span>
+            </div>
             <!-- Botão do menu mobile (hambúrguer) -->
             <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
@@ -48,13 +52,13 @@
             </button>
             <ul class="Menu">
                 <li>
-                    <a href="#inicio" class="menu-link" data-i18n="nav_inicio">Início</a>
+                    <a href="#inicio" class="menu-link active" data-i18n="nav_inicio">Início</a>
                 </li>
                 <li>
                     <a href="#sobre" class="menu-link" data-i18n="nav_sobre">Sobre</a>
                 </li>
                 <li>
-                    <a href="#skills" class="menu-link" data-i18n="nav_skills">Habilidades</a>
+                    <a href="#skills" class="menu-link" data-i18n="nav_skills">Skills</a>
                 </li>
                 <li>
                     <a href="#projetos" class="menu-link" data-i18n="nav_projetos">Projetos</a>
@@ -63,7 +67,7 @@
                     <a href="#contato" class="menu-link" data-i18n="nav_contato">Contato</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-link" id="btn-language" onclick="toggleLanguage(event)">EN</a>
+                    <a href="#" class="lang-toggle" id="btn-language" onclick="toggleLanguage(event)">EN</a>
                 </li>
             </ul>
         </div>
@@ -95,7 +99,7 @@
         </a>
 
         <!-- Badge lateral (Balão flutuante chamando para estágio) -->
-        <a href="#contato" class="sidebar-badge">
+        <a href="#contato" class="sidebar-badge animate-on-scroll">
             <span class="sidebar-badge-icon">🚀</span>
             <span class="sidebar-badge-text" data-i18n="badge_text">Disponível para estágio em Backend e Dados</span>
         </a>
@@ -547,7 +551,7 @@
         <h2 class="projetos-titulo animate-on-scroll" data-i18n="projects_title">Meus Projetos</h2>
         <div class="projetos-caixa">
 
-            <div class="projetos-card animate-on-scroll delay-100">
+            <div class="projetos-card animate-on-scroll animate-project-card delay-100">
                 <a href="https://github.com/beendev21/PortfolioBrenoDev" target="_blank">
                     <img src="img/Port.png" alt="Projeto 1" class="projetos-imagem">
                 </a>
@@ -569,7 +573,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card animate-on-scroll delay-200">
+            <div class="projetos-card animate-on-scroll animate-project-card delay-200">
                 <a href="https://github.com/beendev21/imersao-dev1" target="_blank">
                     <img src="img/MundoIa.png" alt="Projeto 1" class="projetos-imagem">
                 </a>
@@ -590,7 +594,7 @@
                 </div>
             </div>
 
-            <div class="projetos-card animate-on-scroll delay-300">
+            <div class="projetos-card animate-on-scroll animate-project-card delay-300">
                 <video src="img/video.mp4" autoplay muted loop playsinline class="projetos-imagem"></video>
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projeto" data-i18n="project_oh_title">Landing Page Profissional para Oficina Automotiva!</h3>
