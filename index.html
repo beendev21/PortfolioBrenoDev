@@ -115,14 +115,13 @@
         <h2 class="sobre-titulo animate-on-scroll" data-i18n="about_title">Sobre Mim</h2>
         <div class="sobre-container">
             <div class="sobre-caixa">
-                <p class="sobre-paragrafo" data-i18n="about_text">Meu nome é Breno da Silva Vale, sou estudante de Engenharia de Software, com foco no desenvolvimento de soluções tecnológicas inovadoras. Tenho grande interesse por programação, engenharia de dados e análise de dados, utilizando tecnologia e pensamento lógico para transformar desafios complexos em soluções inteligentes e eficientes.
-                    <br><br>
-                    Minha trajetória profissional teve início como Assistente de Vendas, evoluindo posteriormente para a posição de Vendedor Interno. Essa foi a minha primeira escolha após concluir o ensino médio, motivada pela necessidade de contribuir com minha família. Durante esse período, desenvolvi habilidades importantes como comunicação, negociação, proatividade e foco em resultados.
-                    <br><br>
-                    Apesar de ter iniciado minha carreira na área comercial, nunca perdi o interesse pela tecnologia e pelo desejo de atuar na área que realmente me motiva. Ao longo do tempo, mantive meus estudos de forma contínua, buscando aprimorar meus conhecimentos e me preparar para uma transição sólida para a área de tecnologia.
-                    <br><br>
-                    Hoje, sigo dedicado ao meu desenvolvimento acadêmico e profissional, unindo minha experiência prática com a formação em tecnologia para construir soluções cada vez mais eficientes, sempre com foco em aprendizado contínuo, evolução e geração de valor.
-                </p>
+                <div class="sobre-header">
+                    <span class="sobre-tag" data-i18n="header_role">Backend Developer</span>
+                    <h3 class="sobre-subtitle" data-i18n="about_subtitle">Transformando dados em inteligência e lógica em soluções.</h3>
+                </div>
+                <div class="sobre-texto-wrapper">
+                    <p class="sobre-paragrafo" data-i18n="about_text"></p>
+                </div>
             </div>
 
             <!-- Card de Educação -->
@@ -149,7 +148,7 @@
             <h2 class="skills-titulo animate-on-scroll" data-i18n="skills_title">Habilidades</h2>
             <p class="skills-subtitulo animate-on-scroll" data-i18n="skills_subtitle">Tecnologias que utilizo no dia a dia</p>
 
-            <div class="skills-category">
+            <div class="skills-category frontend-category">
                 <h3 data-i18n="skills_cat_front" class="animate-on-scroll slide-left">Front-end</h3>
                 <div class="skills-grid">
                     <div class="skill-card animate-on-scroll delay-100">
@@ -171,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="skills-category">
+            <div class="skills-category backend-data-category">
                 <h3 data-i18n="skills_cat_back" class="animate-on-scroll slide-left">Back-end / Análise de Dados</h3>
                 <div class="skills-grid">
                     <div class="skill-card animate-on-scroll delay-100">
@@ -183,7 +182,7 @@
                         <span>Spring Boot</span>
                     </div>
                     <div class="skill-card animate-on-scroll delay-300">
-                        <img src="https://img.icons8.com/ios-filled/50/00d8ff/api.png" alt="API REST" width="40" loading="lazy">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/api.png" alt="API REST" width="40" loading="lazy">
                         <span data-i18n="skills_api_rest">API REST</span>
                     </div>
                     <div class="skill-card animate-on-scroll delay-400">
@@ -209,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="skills-category">
+            <div class="skills-category tools-category">
                 <h3 data-i18n="skills_cat_tools" class="animate-on-scroll slide-left">Metodologias & Ferramentas</h3>
                 <div class="skills-grid">
                     <div class="skill-card animate-on-scroll delay-100">
@@ -231,7 +230,7 @@
                 </div>
             </div>
 
-            <div class="skills-category">
+            <div class="skills-category soft-skills-category">
                 <h3 data-i18n="skills_cat_soft" class="animate-on-scroll slide-left">Soft Skills</h3>
                 <div class="skills-grid">
                     <div class="skill-card animate-on-scroll delay-100">
@@ -269,11 +268,19 @@
 
             <!-- Linha do Tempo da Trajetória -->
             <div class="trajetoria-card animate-on-scroll">
-                <h3 class="educacao-titulo" data-i18n="traj_title">Trajetória Profissional</h3>
+                <div class="trajetoria-header">
+                    <span class="trajetoria-id">SYSTEM_HISTORY_LOG</span>
+                    <div class="trajetoria-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">RETRIEVING DATA...</span>
+                    </div>
+                </div>
+                <h3 class="trajetoria-titulo-main" data-i18n="traj_title">Trajetória Profissional</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <span class="item-id">0x01</span>
                             <h4 data-i18n="traj_item1_title">Início na área de tecnologia</h4>
                             <p data-i18n="traj_item1_desc">Iniciei meus estudos em programação e desenvolvimento de software, aprendendo lógica de programação, HTML, CSS e JavaScript.</p>
                         </div>
@@ -281,6 +288,7 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <span class="item-id">0x02</span>
                             <h4 data-i18n="traj_item2_title">Desenvolvimento acadêmico</h4>
                             <p data-i18n="traj_item2_desc">Atualmente curso Engenharia de Software, aprofundando conhecimentos em desenvolvimento, banco de dados e engenharia de software.</p>
                         </div>
@@ -288,6 +296,7 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <span class="item-id">0x03</span>
                             <h4 data-i18n="traj_item3_title">Landing Page Profissional para Oficina Automotiva | Companhia do Conserto</h4>
                             <p data-i18n="traj_item3_desc">Desenvolvi uma aplicação web para captação de clientes no setor automotivo, aplicando princípios de Engenharia de Software. Foco em performance, escalabilidade, manipulação dinâmica de dados (JavaScript), arquitetura organizada e integração com APIs (Google Maps, WhatsApp), simulando um ambiente de produção.</p>
                         </div>
@@ -295,6 +304,7 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <span class="item-id">0x04</span>
                             <h4 data-i18n="traj_item4_title">Evolução contínua</h4>
                             <p data-i18n="traj_item4_desc">Buscando estágio e constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.</p>
                         </div>
@@ -312,6 +322,13 @@
             
             <!-- DATABRICKS -->
             <div class="platform-card animate-on-scroll delay-100">
+                <div class="platform-header-top">
+                    <span class="platform-id">0x-PLATFORM-01</span>
+                    <div class="platform-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <div class="platform-header">
                     <img src="https://avatars.githubusercontent.com/u/4998052?s=280&v=4" alt="Databricks" class="platform-mini-icon" loading="lazy">
                     <h3 class="platform-name">Databricks</h3>
@@ -342,6 +359,13 @@
 
             <!-- ALURA -->
             <div class="platform-card animate-on-scroll delay-200">
+                <div class="platform-header-top">
+                    <span class="platform-id">0x-PLATFORM-02</span>
+                    <div class="platform-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <div class="platform-header">
                     <img src="https://play-lh.googleusercontent.com/yDjaHCaOn_O89vnY7eOKH6ElEBtJrmN2CSI4yhiP1_GVC2zrxXWSFGxO0lt9-CU0mV4" alt="Alura" class="platform-mini-icon" loading="lazy">
                     <h3 class="platform-name">Alura</h3>
@@ -431,6 +455,13 @@
 
             <!-- FIAP -->
             <div class="platform-card animate-on-scroll delay-300">
+                <div class="platform-header-top">
+                    <span class="platform-id">0x-PLATFORM-03</span>
+                    <div class="platform-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <div class="platform-header">
                     <img src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5=w600-h300-pc0xffffff-pd" alt="FIAP" class="platform-mini-icon" loading="lazy">
                     <h3 class="platform-name">FIAP</h3>
@@ -473,6 +504,13 @@
             
             <!-- CRUZEIRO DO SUL VIRTUAL -->
             <div class="platform-card animate-on-scroll delay-400">
+                <div class="platform-header-top">
+                    <span class="platform-id">0x-PLATFORM-04</span>
+                    <div class="platform-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <div class="platform-header">
                     <img src="https://static.wixstatic.com/media/75cad5_7ad27eacc4134fcaa7f05ac07c9cef31~mv2.png/v1/fill/w_358,h_233,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/l_edited.png" alt="Cruzeiro do Sul" class="platform-mini-icon" loading="lazy">
                     <h3 class="platform-name">Cruzeiro do Sul</h3>
@@ -557,6 +595,13 @@
         <div class="projetos-caixa">
 
             <div class="projetos-card animate-on-scroll animate-project-card delay-100">
+                <div class="project-header">
+                    <span class="project-id">PRJ_MODULE_01</span>
+                    <div class="project-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <video src="img/video2.mp4" autoplay muted loop playsinline class="projetos-imagem" poster="img/Port.png"></video>
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projeto" data-i18n="project_portfolio_title">Meu Portfólio De Desenvolvedor</h3>
@@ -567,7 +612,7 @@
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="icon-html" alt="HTML5" title="HTML5" loading="lazy">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="icon-css" alt="CSS3" title="CSS3" loading="lazy">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="icon-js" alt="JavaScript" title="JavaScript" loading="lazy">
-                            <img src="https://img.icons8.com/ios-filled/50/00d8ff/api.png" class="icon-api" alt="API" title="API Integration (WhatsApp & Browser APIs)" loading="lazy">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/api.png" class="icon-api" alt="API" title="API Integration (WhatsApp & Browser APIs)" loading="lazy">
                         </div>
                         <a href="https://github.com/beendev21/PortfolioBrenoDev" target="_blank" class="btn-github">
                             <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" width="14" height="14"> <span data-i18n="view_github">Ver no GitHub</span>
@@ -577,6 +622,13 @@
             </div>
 
             <div class="projetos-card animate-on-scroll animate-project-card delay-200">
+                <div class="project-header">
+                    <span class="project-id">PRJ_MODULE_02</span>
+                    <div class="project-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <a href="https://github.com/beendev21/imersao-dev1" target="_blank">
                     <img src="img/MundoIa.png" alt="Projeto Mundo IA" class="projetos-imagem" loading="lazy">
                 </a>
@@ -598,6 +650,13 @@
             </div>
 
             <div class="projetos-card animate-on-scroll animate-project-card delay-300">
+                <div class="project-header">
+                    <span class="project-id">PRJ_MODULE_03</span>
+                    <div class="project-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                </div>
                 <video src="img/video.mp4" autoplay muted loop playsinline class="projetos-imagem" poster="img/MundoIa.png"></video>
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projeto" data-i18n="project_oh_title">Landing Page Profissional para Oficina Automotiva!</h3>
@@ -623,15 +682,24 @@
     <!-- Seção de Contato -->
     <section id="contato" class="contatos">
         <h2 class="contato-titulo animate-on-scroll" data-i18n="contact_title">Contato</h2>
-        <form class="formulario-contato animate-on-scroll" id="formulario">
-            <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form" id="nome" data-i18n="contact_name_placeholder" data-i18n-target="placeholder">
-            </div>
-            <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem" data-i18n="contact_msg_placeholder" data-i18n-target="placeholder"></textarea>
-            </div>
-            <button type="submit" class="botao-form" data-i18n="contact_btn">Enviar via WhatsApp</button>
-        </form>
+        <div class="contato-container animate-on-scroll">
+            <form class="formulario-contato" id="formulario">
+                <div class="form-header">
+                    <div class="header-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SECURE CONNECTION</span>
+                    </div>
+                    <span class="form-id">0x-CONTACT-v2</span>
+                </div>
+                <div class="grupo-form">
+                    <input placeholder="Nome" class="campo-form" id="nome" data-i18n="contact_name_placeholder" data-i18n-target="placeholder">
+                </div>
+                <div class="grupo-form">
+                    <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem" data-i18n="contact_msg_placeholder" data-i18n-target="placeholder"></textarea>
+                </div>
+                <button type="submit" class="botao-form" data-i18n="contact_btn">Enviar via WhatsApp</button>
+            </form>
+        </div>
 
         <div class="social-icons">
             <a href="https://github.com/beendev21" target="_blank" rel="noopener noreferrer" title="Visite meu GitHub" class="social-icon-link">
@@ -673,6 +741,7 @@
                 location: "São Paulo, Brasil",
                 age: "21 anos",
                 about_title: "Sobre Mim",
+                about_subtitle: "Transformando dados em inteligência e lógica em soluções.",
                 about_text: "Meu nome é Breno da Silva Vale, sou estudante de Engenharia de Software, com foco no desenvolvimento de soluções tecnológicas inovadoras. Tenho grande interesse por programação, engenharia de dados e análise de dados, utilizando tecnologia e pensamento lógico para transformar desafios complexos em soluções inteligentes e eficientes.<br><br>Minha trajetória profissional teve início como Assistente de Vendas, evoluindo posteriormente para a posição de Vendedor Interno. Essa foi a minha primeira escolha após concluir o ensino médio, motivada pela necessidade de contribuir com minha família. Durante esse período, desenvolvi habilidades importantes como comunicação, negociação, proatividade e foco em resultados.<br><br>Apesar de ter iniciado minha carreira na área comercial, nunca perdi o interesse pela tecnologia e pelo desejo de atuar na área que realmente me motiva. Ao longo do tempo, mantive meus estudos de forma contínua, buscando aprimorar meus conhecimentos e me preparar para uma transição sólida para a área de tecnologia.<br><br>Hoje, sigo dedicado ao meu desenvolvimento acadêmico e profissional, unindo minha experiência prática com a formação em tecnologia para construir soluções cada vez mais eficientes, sempre com foco em aprendizado contínuo, evolução e geração de valor.",
                 edu_title: "Educação",
                 edu_course2_name: "Bacharelado Engenharia de Software",
@@ -796,6 +865,7 @@
                 location: "São Paulo, Brazil",
                 age: "21 years old",
                 about_title: "About Me",
+                about_subtitle: "Transforming data into intelligence and logic into solutions.",
                 about_text: "My name is Breno da Silva Vale. I am a student of Software Engineering, focused on developing innovative technological solutions. I have a strong interest in programming, data engineering, and data analysis, using technology and logical thinking to transform complex challenges into smart and efficient solutions.<br><br>My professional journey began as a Sales Assistant, later progressing to the role of Inside Sales Representative. This was my first choice after finishing high school, driven by the need to support my family. During this time, I developed important skills such as communication, negotiation, proactivity, and a results-oriented mindset.<br><br>Although I started my career in the commercial field, I never lost my passion for technology or my desire to work in the area that truly motivates me. Over time, I continuously pursued my studies, improving my knowledge and preparing myself for a solid transition into the tech industry.<br><br>Today, I remain fully committed to my academic and professional growth, combining my practical experience with my education in technology to build increasingly efficient solutions, always driven by continuous learning, growth, and value creation.",
                 // --- EDUCATION SECTION (ENGLISH) ---
                 edu_title: "Education",
@@ -909,21 +979,18 @@
             }
         };
 
-        let typewriterTimeout;
         function typeWriterEffect(element, text) {
             let i = 0;
-            element.textContent = '';
-            if (typewriterTimeout) clearTimeout(typewriterTimeout);
+            element.innerHTML = '<span class="type-cursor">|</span>';
+            
+            if (element._typewriterTimeout) clearTimeout(element._typewriterTimeout);
             
             const typingDelay = 100;
             function type() {
                 if (i < text.length) {
-                    element.textContent += text.charAt(i);
+                    element.innerHTML = text.substring(0, i + 1) + '<span class="type-cursor">|</span>';
                     i++;
-                    typewriterTimeout = setTimeout(type, typingDelay);
-                } else {
-                    // Adiciona um pequeno cursor no final após terminar
-                    element.innerHTML += '<span class="type-cursor">|</span>';
+                    element._typewriterTimeout = setTimeout(type, typingDelay);
                 }
             }
             type();
@@ -939,7 +1006,7 @@
 
                 if (target === 'placeholder') {
                     element.placeholder = text;
-                } else if (key === 'header_role') {
+                } else if (key === 'header_role' && element.classList.contains('cabecalho-sub-titulo')) {
                     typeWriterEffect(element, text);
                 } else {
                     element.innerHTML = text;
