@@ -7,9 +7,15 @@
 }
 
 html {
-    /* Rolagem suave ao clicar nos links do menu */
-    scroll-behavior: smooth;
     scroll-padding-top: 100px;
+}
+
+/* Configurações necessárias para o Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 /* Definição das cores principais (variáveis) pra facilitar trocas futuras */
