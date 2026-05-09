@@ -839,6 +839,26 @@ h1 {
 .icon-api { --pulse-color: #00d8ff; animation-delay: 1.5s !important; }
 .icon-maps { --pulse-color: #34a853; animation-delay: 1.5s !important; }
 .icon-whatsapp { --pulse-color: #25d366; animation-delay: 2s !important; }
+.icon-java { --pulse-color: #f89820; animation-delay: 0.2s !important; }
+.icon-spring { --pulse-color: #6db33f; animation-delay: 0.7s !important; }
+.icon-sql { --pulse-color: #00758f; animation-delay: 1.2s !important; }
+.icon-react { --pulse-color: #61dafb; animation-delay: 0.3s !important; }
+.icon-dotnet { --pulse-color: #512bd4; animation-delay: 0.8s !important; }
+.icon-postgres { --pulse-color: #336791; animation-delay: 1.3s !important; }
+.icon-redis { --pulse-color: #d82c20; animation-delay: 1.8s !important; }
+
+/* Estilo para links de colaboradores nos projetos */
+.colab-link {
+    color: var(--vermelho-tech);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.colab-link:hover {
+    color: var(--branco);
+    text-shadow: 0 0 8px var(--vermelho-glow);
+}
 
 @keyframes iconPulse {
     0%, 100% { filter: drop-shadow(0 0 0px transparent); }
