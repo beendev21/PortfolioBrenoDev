@@ -691,6 +691,17 @@ h1 {
     border-color: var(--vermelho-tech);
 }
 
+/* --- Destaque sutil para o novo projeto --- */
+.project-highlight {
+    border-color: rgba(225, 29, 72, 0.6) !important;
+    animation: highlight-glow-pulse 4s infinite ease-in-out;
+}
+
+@keyframes highlight-glow-pulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(225, 29, 72, 0.1); }
+    50% { box-shadow: 0 0 30px rgba(225, 29, 72, 0.4); border-color: var(--vermelho-tech) !important; }
+}
+
 .project-header {
     display: flex;
     justify-content: space-between;
