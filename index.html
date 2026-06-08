@@ -108,7 +108,7 @@
         <!-- Badge lateral (Balão flutuante chamando para estágio) -->
         <a href="#contato" class="sidebar-badge animate-on-scroll">
             <span class="sidebar-badge-icon">🚀</span>
-            <span class="sidebar-badge-text" data-i18n="badge_text">Disponível para estágio em Backend e Dados</span>
+            <span class="sidebar-badge-text" data-i18n="badge_text">Programador Júnior - SWB Indústria Mecânica e Automação Industrial Ltda.</span>
         </a>
     </main>
 
@@ -137,7 +137,8 @@
                         <h4 data-i18n="edu_course2_name">Engenharia de Software</h4>
                         <p class="instituicao" data-i18n="edu_course2_inst">Cruzeiro do Sul Virtual</p>
                         <p data-i18n="edu_course2_desc">Curso voltado ao desenvolvimento de software com foco em programação, arquitetura de sistemas, engenharia de requisitos, testes e boas práticas de desenvolvimento.</p>
-                        <span class="badge-date" data-i18n="edu_course2_date">1º Semestre | Conclusão: 2029</span>
+                        <span class="badge-date" data-i18n="edu_course2_date">2º Semestre | Conclusão: 2029</span>
+                        <span class="badge-date" data-i18n="edu_course2_grade">Média: 9,7</span>
                     </div>
                 </div>
             </div>
@@ -210,6 +211,24 @@
                     <div class="skill-card animate-on-scroll delay-800">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" width="40" loading="lazy">
                         <span>Power BI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category automation-category">
+                <h3 data-i18n="skills_cat_automation" class="animate-on-scroll slide-left">Automação Industrial</h3>
+                <div class="skills-grid">
+                    <div class="skill-card animate-on-scroll delay-100">
+                        <img src="https://raw.githubusercontent.com/node-red/node-red-design/master/logos/node-red-icon.svg" alt="Node-RED" width="40" loading="lazy">
+                        <span>Node-RED</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-200">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/circuit.png" alt="Ladder" width="40" loading="lazy">
+                        <span data-i18n="skill_ladder">Lógica Ladder</span>
+                    </div>
+                    <div class="skill-card animate-on-scroll delay-300">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/electrical-threshold.png" alt="Diagramas Elétricos" width="40" loading="lazy">
+                        <span data-i18n="skill_diagrams">Diagramas Elétricos</span>
                     </div>
                 </div>
             </div>
@@ -307,12 +326,23 @@
                             <p data-i18n="traj_item5_desc">Desenvolvimento de uma plataforma robusta para torneios de VALORANT, CS2 e LoL, com foco em escalabilidade e tempo real.</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item current-job">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <span class="item-id">0x05</span>
+                            <div class="job-header">
+                                <h4 data-i18n="traj_item6_title">Programador Júnior | SWB Indústria Mecânica e Automação Industrial Ltda.</h4>
+                                <span class="badge-now" data-i18n="traj_badge_now">ATUAL</span>
+                            </div>
+                            <p data-i18n="traj_item6_desc">Desenvolvimento de sistemas de automação industrial utilizando JavaScript, Python e Node-RED. Atuação técnica com lógica Ladder e interpretação de diagramas elétricos para integração eficiente entre software e hardware.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="item-id">0x06</span>
                             <h4 data-i18n="traj_item4_title">Evolução contínua</h4>
-                            <p data-i18n="traj_item4_desc">Buscando estágio e constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.</p>
+                            <p data-i18n="traj_item4_desc">Focado em evolução constante na área de tecnologia, estudando novas ferramentas, boas práticas de engenharia e tendências do mercado para gerar valor real nos projetos.</p>
                         </div>
                     </div>
                 </div>
@@ -782,12 +812,16 @@
                 edu_course2_name: "Bacharelado Engenharia de Software",
                 edu_course2_inst: "Cruzeiro do Sul Virtual",
                 edu_course2_desc: "Curso voltado ao desenvolvimento de software com foco em programação, arquitetura de sistemas, engenharia de requisitos, testes e boas práticas de desenvolvimento.",
-                edu_course2_date: "1º Semestre | Conclusão: 2029",
+                edu_course2_date: "2º Semestre | Conclusão: 2029",
+                edu_course2_grade: "Média: 9,7",
                 skills_title: "Habilidades",
                 skills_subtitle: "Tecnologias que utilizo no dia a dia",
                 skills_cat_front: "Front-end",
                 skills_api_rest: "API REST",
                 skills_cat_back: "Back-end / Análise de Dados",
+                skills_cat_automation: "Automação Industrial",
+                skill_ladder: "Lógica Ladder",
+                skill_diagrams: "Diagramas Elétricos",
                 skills_cat_tools: "Metodologias & Ferramentas",
                 skill_agile: "Scrum / Kanban",
                 skills_cat_soft: "Soft Skills",
@@ -818,6 +852,7 @@
                 contact_msg_placeholder: "Digite sua mensagem",
                 contact_btn: "Enviar via WhatsApp",
                 // --- TRAJETÓRIA ---
+                traj_badge_now: "ATUAL",
                 traj_title: "Trajetória Profissional",
                 traj_item1_title: "Início na tecnologia",
                 traj_item1_desc: "Iniciei meus estudos em programação e desenvolvimento de software, aprendendo lógica de programação, HTML, CSS e JavaScript.",
@@ -827,8 +862,10 @@
                 traj_item3_desc: "Desenvolvi uma aplicação web para captação de clientes no setor automotivo, aplicando princípios de Engenharia de Software. Foco em performance, escalabilidade, manipulação dinâmica de dados (JavaScript), arquitetura organizada e integração com APIs (Google Maps, WhatsApp), simulando um ambiente de produção.",
                 traj_item5_title: "Plataforma Competitiva de e-Sports | VALORANT, CS2 e LoL",
                 traj_item5_desc: "Atuação no Front-End com React.js e planejamento da arquitetura (MVP). Responsável direto pela implementação do SignalR para comunicação em tempo real e reformulação completa do painel administrativo, além da construção de interfaces para gerenciamento de times, rankings e chaveamento automático. O projeto utiliza .NET, PostgreSQL, Redis e Cloudflare R2.",
+                traj_item6_title: "Programador Júnior | SWB Indústria Mecânica e Automação Industrial Ltda.",
+                traj_item6_desc: "Desenvolvimento de sistemas de automação industrial utilizando JavaScript, Python e Node-RED. Atuação técnica com lógica Ladder e interpretação de diagramas elétricos para integração eficiente entre software e hardware.",
                 traj_item4_title: "Evolução contínua",
-                traj_item4_desc: "Buscando constantemente evolução na área de tecnologia, estudando novas ferramentas, boas práticas e tendências do mercado.",
+                traj_item4_desc: "Focado em evolução constante na área de tecnologia, estudando novas ferramentas, boas práticas de engenharia e tendências do mercado para gerar valor real nos projetos.",
                 // --- CERTIFICADOS ---
                 cert_title: "Certificados e Cursos",
                 cert_btn: "Ver Certificado",
@@ -888,7 +925,7 @@
                 course_alura_3: "Estruturas de repetição",
                 course_alura_4: "Estruturas de dados",
                 course_alura_generic_desc: "Certificado de conclusão emitido pela Alura.",
-                badge_text: "Disponível para estágio em Backend e Dados",
+                badge_text: "Programador Júnior - SWB Indústria Mecânica e Automação Industrial Ltda.", // Texto completo para o badge
                 badge_text_short: "Disponível para estágio" // Versão mais curta para o Hero
             },
             en: {
@@ -911,12 +948,16 @@
                 edu_course2_name: "Bachelor's degree in Software Engineering",
                 edu_course2_inst: "Cruzeiro do Sul Virtual",
                 edu_course2_desc: "Course focused on software development with a focus on programming, systems architecture, requirements engineering, testing, and development best practices.",
-                edu_course2_date: "1st Semester | Conclusion: 2029",
+                edu_course2_date: "2nd Semester | Conclusion: 2029",
+                edu_course2_grade: "GPA: 9.7",
                 skills_title: "Skills",
                 skills_subtitle: "Technologies I use daily",
                 skills_cat_front: "Front-end",
                 skills_api_rest: "REST API",
                 skills_cat_back: "Back-end / Data Analysis",
+                skills_cat_automation: "Industrial Automation",
+                skill_ladder: "Ladder Logic",
+                skill_diagrams: "Electrical Diagrams",
                 skills_cat_tools: "Methodologies & Tools",
                 skill_agile: "Scrum / Kanban",
                 skills_cat_soft: "Soft Skills",
@@ -947,6 +988,7 @@
                 contact_msg_placeholder: "Enter your message",
                 contact_btn: "Send via WhatsApp",
                 // --- TRAJECTORY (ENGLISH) ---
+                traj_badge_now: "CURRENT",
                 traj_title: "Professional Trajectory",
                 traj_item1_title: "Start in Technology",
                 traj_item1_desc: "I started my studies in programming and software development, learning programming logic, HTML, CSS, and JavaScript.",
@@ -956,8 +998,10 @@
                 traj_item3_desc: "Developed a web application for automotive client acquisition, applying Software Engineering principles. Focused on performance, scalability, dynamic data manipulation (JavaScript), organized architecture, and API integration (Google Maps, WhatsApp), simulating a production environment.",
                 traj_item5_title: "Competitive e-Sports Platform | VALORANT, CS2 & LoL",
                 traj_item5_desc: "Front-End development with React.js and architecture planning (MVP). Directly responsible for implementing SignalR for real-time communication and a complete reformulation of the administrative panel, alongside UI construction for team management, rankings, and automatic brackets. Built with .NET, PostgreSQL, Redis, and Cloudflare R2.",
+                traj_item6_title: "Junior Programmer | SWB Mechanical Industry and Industrial Automation Ltd.",
+                traj_item6_desc: "Developing industrial automation systems using JavaScript, Python, and Node-RED. Technical work with Ladder logic and electrical diagrams to ensure seamless integration between software and hardware.",
                 traj_item4_title: "Continuous Evolution",
-                traj_item4_desc: "Constantly seeking evolution in the technology area, studying new tools, best practices, and market trends.",
+                traj_item4_desc: "Focusing on constant evolution in the technology field, studying new tools, engineering best practices, and market trends to deliver high-quality solutions.",
                 // --- CERTIFICATES (ENGLISH) ---
                 cert_title: "Certificates & Courses",
                 cert_btn: "View Certificate",
@@ -1017,8 +1061,8 @@
                 course_alura_3: "Loop Structures",
                 course_alura_4: "Data Structures",
                 course_alura_generic_desc: "Certificate of completion issued by Alura.", 
-                badge_text: "Available for Backend & Data internship",
-                badge_text_short: "Available for internship" // Versão mais curta para o Hero
+                badge_text: "Junior Programmer - SWB Mechanical Industry and Industrial Automation Ltd.",
+                badge_text_short: "Junior Programmer" // Versão mais curta para o Hero
             }
         };
 

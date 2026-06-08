@@ -557,7 +557,7 @@ h1 {
 }
 
 /* Variáveis de cor por categoria para um design organizado */
-.frontend-category, .backend-data-category, .tools-category, .soft-skills-category {
+.frontend-category, .backend-data-category, .automation-category, .tools-category, .soft-skills-category {
     --cat-color: var(--primaria); /* Unifica para branco/prateado */
 }
 .skills-category h3 {
@@ -1385,6 +1385,8 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: inline-block;
     box-shadow: 0 0 10px var(--glow);
+    margin-top: 10px;
+    margin-right: 8px;
 }
 
 /* --- Keyframes (Definição das Animações) --- */
@@ -1436,6 +1438,52 @@ h1 {
     100% {
         top: 110%;
     }
+}
+
+/* Efeito para o trabalho atual na timeline */
+.timeline-item.current-job .timeline-dot {
+    background: var(--branco);
+    box-shadow: 0 0 15px var(--branco), 0 0 30px var(--vermelho-tech);
+    animation: dotPulse 2s infinite;
+    z-index: 2;
+}
+
+.timeline-item.current-job .timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.job-header h4 {
+    margin-bottom: 0 !important;
+}
+
+.badge-now {
+    font-size: 0.65rem;
+    background: var(--vermelho-tech);
+    color: var(--branco);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 12px var(--vermelho-glow);
+    text-transform: uppercase;
+}
+
+@keyframes dotPulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px var(--branco), 0 0 10px var(--vermelho-glow); }
+    50% { transform: scale(1.4); box-shadow: 0 0 25px var(--branco), 0 0 20px var(--vermelho-glow); }
+    100% { transform: scale(1); box-shadow: 0 0 15px var(--branco), 0 0 10px var(--vermelho-glow); }
 }
 
 /* Estilos da Linha do Tempo (Trajetória) */
